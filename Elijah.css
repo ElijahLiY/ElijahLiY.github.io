@@ -1,0 +1,54 @@
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background:#B5AC62;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+#allcontent{
+	width:1325px;
+	float:none;
+	text-align:center;
+	background:#9FF}
+#header{
+	width:1325px;
+	text-align:center;
+	float:right;
+	background-color:#3F9;}
+#mywords{
+	float:right;
+	font-family:"Times New Roman", Times, serif;
+	margin-right:250px;
+	background:#F90;
+	color:#111;}
+#mywords.h3{ font-family:sans-serif, serif;}
+#menu{
+	float:right;
+    margin-right:335px;}
+#siteimgs{background:#90F;
+          width:725px;
+          float:right;
+		  margin-right:300px;}
+#list {float:right;
+       width:800px;
+	   margin-right:262px;
+	   background:#F36;}
+#shoppinglist,#studyinglist,#maillist,#otherlist{width:190px;
+              float:right;}
+
+#shoppinglist ul li a{float:left; font-family:Arial; text-align:center; line-height:40px; font-size:20px; color:#636038;}
+#shoppinglist ul li a:hover{color:#030; font-size:23px; text-align:center;}
+		  
+#footer {weith:300px;
+	     font-family:Verdana, Geneva, sans-serif;
+         font-size:small;
+		 text-align:center;
+		 padding:15px;		 clear:both;
+		 color:#eed;
+		 background-color:#66C;
+}
+.clear{text-align:center; clear:both;}
+.otherlisthover{background-color:#0F0; font:Verdana, Geneva, sans-serif; font-size:24px;}
+.otherlist{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
+.otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
+#otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
