@@ -16,15 +16,15 @@ body {
 	float:right;
 	background-color:#3F9;}
 #mywords{
-	float:right;
+	float:center;
 	font-family:"Times New Roman", Times, serif;
 	margin-right:250px;
 	background:#F90;
 	color:#111;}
 #mywords.h3{ font-family:sans-serif, serif;}
 #menu{
-	float:right;
-    margin-right:335px;}
+	float:center;
+    margin-right:3px;}
 #siteimgs{background:#90F;
           width:725px;
           float:right;
