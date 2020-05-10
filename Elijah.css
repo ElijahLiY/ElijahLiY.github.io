@@ -25,10 +25,12 @@ body {
 #menu{
 	float:center;
     margin-right:3px;}
-#siteimgs{background:#90F;
-          width:725px;
-          float:right;
-		  margin-right:300px;}
+#siteimgs{background:#FFF;
+		  text-align:center;
+          width:800px;
+          float:center;
+		  height:300px;
+		  }
 #list {float:right;
        width:800px;
 	   margin-right:262px;
@@ -39,13 +41,15 @@ body {
 #shoppinglist ul li a{float:left; font-family:Arial; text-align:center; line-height:40px; font-size:20px; color:#636038;}
 #shoppinglist ul li a:hover{color:#030; font-size:23px; text-align:center;}
 		  
-#footer {weith:300px;
+#footer {
+	padding: 10px 0;
+	background: #CCC49F;
+	weith:300px;
 	     font-family:Verdana, Geneva, sans-serif;
          font-size:small;
 		 text-align:center;
 		 padding:15px;		 clear:both;
 		 color:#eed;
-		 background-color:#66C;
 }
 .clear{text-align:center; clear:both;}
 .otherlisthover{background-color:#0F0; font:Verdana, Geneva, sans-serif; font-size:24px;}
