@@ -12,6 +12,7 @@ body {
 	background:#9FF}
 #header{
 	width:1325px;
+	height: 100
 	text-align:center;
 	float:right;
 	background-color:#3F9;}
@@ -55,4 +56,5 @@ body {
 .otherlisthover{background-color:#0F0; font:Verdana, Geneva, sans-serif; font-size:24px;}
 .otherlist{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
 .otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
-#otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
+#otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}.baidu {
+}
