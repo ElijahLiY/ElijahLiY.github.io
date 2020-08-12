@@ -30,12 +30,21 @@ body {
 #menu{
 	float:center;
     margin-right:3px;}
-#siteimgs{background:#FFF;
-		  text-align:center;
-          width:800px;
-          float:center;
-		  height:400px;
+
+#mysiteimgs{
+	background:#FFF;
+	float: left;
+	margin-left: 50px;
+	margin-right: 0px;
+          width:410px;
 		  }
+
+#jjsiteimgs{background:#FFF;
+	float: right;
+	margin-right: 50px;
+          width:410px;
+		  }
+
 #list {float:right;
        width:800px;
 	   margin-right:262px;
@@ -64,4 +73,7 @@ body {
 }
 .input {line-height: 30px;
 	font-weight: 400px;
+}
+.img {
+	height: 70px;
 }
