@@ -16,6 +16,10 @@ body {
 	text-align:center;
 	float:right;
 	background-color:#3F9;}
+
+#baidu{
+	padding-bottom: 20px
+}
 #mywords{
 	float:center;
 	font-family:"Times New Roman", Times, serif;
@@ -30,7 +34,7 @@ body {
 		  text-align:center;
           width:800px;
           float:center;
-		  height:300px;
+		  height:400px;
 		  }
 #list {float:right;
        width:800px;
@@ -57,4 +61,7 @@ body {
 .otherlist{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
 .otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
 #otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}.baidu {
+}
+.input {line-height: 30px;
+	font-weight: 400px;
 }
