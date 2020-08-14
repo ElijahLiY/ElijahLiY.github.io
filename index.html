@@ -52,11 +52,7 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
 	background: #ADB96E;
 }
 
-/* ~~ 这是布局信息。 ~~ 
 
-1) 填充只会放置于 div 的顶部和/或底部。此 div 中的元素侧边会有填充。这样，您可以避免使用任何“方框模型数学”。请注意，如果向 div 自身添加任何侧边填充或边框，这些侧边填充或边框将与您定义的宽度相加，得出 *总计* 宽度。您也可以选择删除 div 中的元素的填充，并在该元素中另外放置一个没有任何宽度但具有设计所需填充的 div。
-
-*/
 
 .content {
 
@@ -69,21 +65,7 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
 	background: #CCC49F;
 }
 
-/* ~~ 其它浮动/清除类 ~~ */
-.fltrt {  /* 此类可用于在页面中使元素向右浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
-	float: right;
-	margin-left: 8px;
-}
-.fltlft { /* 此类可用于在页面中使元素向左浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
-	float: left;
-	margin-right: 8px;
-}
-.clearfloat { /* 如果从 #container 中删除或移出了 #footer，则可以将此类放置在 <br /> 或空 div 中，作为 #container 内最后一个浮动 div 之后的最终元素 */
-	clear:both;
-	height:0;
-	font-size: 1px;
-	line-height: 0px;
-}
+
 -->
 </style></head>
 
@@ -126,6 +108,7 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
             <a href="https://apps.webofknowledge.com/UA_GeneralSearch_input.do?product=UA&search_mode=GeneralSearch&SID=7BIrL5yspjlln5BVK29&preferencesSaved=" target="_blank"><img title="科学网页版" class="img" src="img_jingjing/WebOfScience.png" /></a>
             <a href="https://www.zhihu.com/" target="_blank"><img title="不懂就问我吧" class="img" src="image/知乎.jpg" /></a>
       		<a href="http://www.126.com/" target="_blank"><img title="我可以收发邮件" class="img" src="img_jingjing/126邮箱.jpg" /></a>
+			<a href="http://las.ibp.ac.cn/" target="_blank"><img title="动物实验" class="img" src="img_jingjing/动物实验管理系统.png" /></a>
 			<a href="https://www.cell.com/cell/newarticles" target="_blank"><img title="看看有什么新文章吧" class="img" src="img_jingjing/cell.jpg" /></a>
 			<a href="https://ac.scmor.com/" target="_blank"><img title="在这里找文献" class="img" src="img_jingjing/谷歌学术.png"/></a>
 			<a href="https://www.selleck.cn/molaritycalculator.jsp" target="_blank"><img title="计算公式" class="img" src="img_jingjing/4.png" /></a>
@@ -137,7 +120,10 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
 </div>
 		
    <div id="footer">
-  <p>Copyright © 2012 XJTU. All Rights Reserved.Designed by <a href="About Elijah.html"target="_blank">Elijah</a>. </p>
+	   <p>Copyright © 2012 XJTU. All Rights Reserved.Designed by <a href="About Elijah.html"target="_blank">Elijah</a>. 
+	   </p>
+	   <p><a href="测试区\test.html"target="_blank">测试区</a>. 
+	   </p>
   <input type="button" value="关闭窗口" onclick="window.close()" />
   </div>
   <!-- end .container --></div>
