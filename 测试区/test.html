@@ -17,8 +17,8 @@
 		alert('你好,'+name+'!')
 		document.write('你好,'+name+'!')
 		
-		function diptime(){
-		alert("程序已经运行！");
+		function disptime(){
+//		alert("程序已经运行！");
         var time = new Date(); //获得当前时间
         var year = time.getFullYear(); //获得年月日
         var month = time.getMonth(); //获得年月日
@@ -38,11 +38,16 @@
         document.myform.myclock.value = year + "年" + month + "月" + date + "日" + hour + ":" + minute + ":" + second
 		}
 		
-		diptime();
+		disptime();
 		
 		/*设置定时器每隔1秒（1000毫秒），调用函数disptime()执行，刷新时钟显示*/
-        myTime = setTimeout("disptime()", 1000);
-		
+			window.setTimeout("disptime()", 1000)
+			window.setTimeout("disptime()", 1000)
+			window.setTimeout("disptime()", 1000)
+			window.setTimeout("disptime()", 1000)
+			window.setTimeout("disptime()", 1000)
+			window.setTimeout("disptime()", 1000)
+			window.setTimeout("disptime()", 1000)
     </script> 
 	
 	<p>这是测试所用的html，请开始你的创作吧</p>
