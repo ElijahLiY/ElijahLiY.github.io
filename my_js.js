@@ -1,18 +1,4 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>测试</title>
-</head>
-	
-<body>
-	<form name="myform">
-            <input name="myclock" type="text" value="" size="20">
-    </form>
-	
-    <span id="clock"></span>
-	
-	<script type="text/javascript">
+<script type="text/javascript">
 		name = prompt('请输入你的名字','Elijah')
 		alert('你好,'+name+'!')
 		document.write('你好,'+name+'!')
@@ -31,10 +17,10 @@
         if (second < 10) //如果秒数只有1位，补0显示
             second = "0" + second;
 				
-        /*设置span内容为当前时间*/
+        /*设置form内容为当前时间*/
         document.getElementById('clock').innerHTML = year + "年" + month + "月" + date + "日" + hour + ":" + minute + ":" + second
 			
-		/*设置form内容为当前时间*/
+		/*设置span内容为当前时间*/
         document.myform.myclock.value = year + "年" + month + "月" + date + "日" + hour + ":" + minute + ":" + second
 		
 		/*1s后运行本身，达到重复运行的功效*/
@@ -43,11 +29,11 @@
 		
 		
 		disptime();
-		
+
+		function showwords(){
+			alert('程序已经运行')
+			ls = '真正的努力总是在别人看不到的地方'
+			document.getElementById('lzwords').value = ls[0]
+		}
+		window.onload = showwords
 		</script> 
-	
-	<p>这是测试所用的html，请开始你的创作吧</p>
-	
-	
-</body>
-</html>

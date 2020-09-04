@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Elijah网址导航</title>
 <link href="Elijah.css" rel="stylesheet" type="text/css" />
+<link href="my_js.js" type="text/javascript" />
 <style type="text/css">
 <!--
 body {
@@ -13,7 +14,6 @@ body {
 	padding: 0;
 	color: #000;
 }
-
 /* ~~ 元素/标签选择器 ~~ */
 ul, ol, dl { /* 由于浏览器之间的差异，最佳做法是在列表中将填充和边距都设置为零。为了保持一致，您可以在此处指定需要的数值，也可以在列表所包含的列表项（LI、DT 和 DD）中指定需要的数值。请注意，除非编写一个更为具体的选择器，否则您在此处进行的设置将会层叠到 .nav 列表。 */
 	padding: 0;
@@ -39,7 +39,6 @@ a:visited {
 a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠标使用者相同的悬停体验。 */
 	text-decoration: none;
 }
-
 /* ~~ 此固定宽度容器包含其它 div ~~ */
 .container {
 	width: 960px;
@@ -52,8 +51,6 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
 	background: #ADB96E;
 }
 
-
-
 .content {
 
 	padding: 10px 0;
@@ -65,12 +62,14 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
 	background: #CCC49F;
 }
 
-
 -->
-</style></head>
+</style>
+	
+
+	</head>
 
 <body>
-
+	
 <div class="container" align="center">
   <div class="header"><h1><img src="image/award.gif" alt="" width="71" height="90"/>Elijah网址导航</h1>
     <!-- end .header --></div>
@@ -101,7 +100,27 @@ a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠
 		
 		<div id="jjsiteimgs" align="center">
 			<p><h1>静的工作区</h1></p>
-			
+			<span id="lzwords"></span>
+				<script type="text/javascript">
+					var lz = ["天行健，君子以自強不息，地勢坤，君子以厚德载物",
+							  "如果放弃太早，你永远都不知道自己会错过什么", 
+							  "你特么的看看你现在的样子?还是我爱的那个你么",
+							  "你的选择是做或不做，但不做就永远不会有机会", 
+							  "你必须成功，因为你不能失败", 
+							  "人生有两出悲剧：一是万念俱灰，另一是踌躇满志",
+							  "遇到困难时不要抱怨，既然改变不了过去，那么就努力改变未来",
+							  "只要功夫深，铁杵磨成针",
+							  "用理想去成就人生，不要蹉跎了岁月",
+							 "永不言败是追究者的最佳品格",
+							  "目标的实现建立在我要成功的强烈愿望上",
+							  "保持激情;只有激情，你才有动力，才能感染自己和其他人",
+							  "别人能做到的事，自己也可以做到",
+							  "学习必须如蜜蜂一样，采过许多花，这才能酿出蜜来",
+							  "努力了不一定能够成功，但是放弃了肯定是失败"];
+					var m = Math.random();
+					var n = Math.floor(m*(lz.length+1));
+						document.getElementById("lzwords").innerHTML = lz[n]+'</br>'
+				</script>
       		<a href="https://docs.qq.com/desktop" target="_blank"><img title="这里可能是分享线上文档的吧" class="img" src="img_jingjing/腾讯文档.jpg"/></a>	
     		<a href="https://translate.google.cn/" target="_blank"><img title="英文不会点这里" class="img" src="img_jingjing/谷歌翻译.jpg"/></a>
 			<a href="http://samp.cas.cn/" target="_blank"><img title="设备共享平台" class="img" src="img_jingjing/设备共享平台.png"/></a>
