@@ -10,12 +10,13 @@ body {
 	font-style: normal;
 	font-weight: 200;
 }
+
 /* Container */
 .container {
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	height: 1000px;
+	height: 940px;
 	background-color: #FFFFFF;
 }
 /* Navigation */
@@ -55,13 +56,11 @@ nav ul li {
 	font-weight: bold;
 	transition: all 0.3s linear;
 }
-ul li a {
+nav ul li a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
-ul li:hover a {
-	color: #2C9AB7;
-}
+
 .hero_header {
 	color: #FFFFFF;
 	text-align: center;
@@ -84,7 +83,7 @@ ul li:hover a {
 .tagline {
 	text-align: center;
 	color: #FFFFFF;
-	margin-top: 4px;
+	margin-top: 4px; 	
 	font-weight: lighter;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -95,12 +94,12 @@ ul li:hover a {
 	align-content: center;
 	background-color: #FFFFFF;
 	background-image: url(../images/parallax.png);
-	height: 400px;
+	height:600px;
 	background-attachment: fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.parallax {
+.titwords {
 	color: #000000;
 	text-align: center;
 	padding-right: 100px;
@@ -108,24 +107,66 @@ ul li:hover a {
 	letter-spacing: 2px;
 	margin-top: 0px;
 }
-.table1{
-	color: #000000;
-	padding: inherit;
-	border: 10px;
-	
+/*为了测试*/
+div{
+	border: 1px dashed #000;
 }
+table{
+	border-collapse: collapse;
+	background-color: #B3B3B3;
+	margin: 0px auto;
+}
+
+.titlist{
+	list-style: none;/*	删除圆点*/
+	font-size: 25px;
+	font-weight: bold;
+	color: #717070;
+	line-height: 50px;
+	display: inline;
+	overflow: hidden;
+
+}
+.titlist a:hover{
+	background-color: #52bad5;
+	cursor: pointer;
+}
+.titlist a:visited{
+	background-color: #52bad5;	
+}
+/*对第一个标题进行修饰，因为是默认页*/
+#tab1{
+	background-color: #52bad5;
+}
+/*表格内容页底色*/
+#th2{
+	background-color: #52bad5;
+}
+
+/*对表格内容进行修饰*/
+#tab1_content{
+	font-size: 25px;
+	font-weight: bold;
+	color: #717070;
+}
+
+
+
+/*第二章表格的表格样式*/
+#tab2_con1 li {float: left; width: 120px;list-style-type: none;}
+#tab2_con2{float: left}
+#tab2_con2 th{width: 60px;}
 
 
 /* More info */
 footer {
 	background-color: #FFFFFF;
-	padding-bottom: 35px;
+	padding-bottom: 0px;
 }
 .footer_column {
 	width: 50%;
 	text-align: center;
-	padding-top: 30px;
-	float: left;
+	padding-top: 0px;
 }
 footer .footer_column h3 {
 	color: #B3B3B3;
@@ -147,13 +188,13 @@ footer .footer_column p {
 }
 .button {
 	width: 200px;
-	margin-top: 40px;
+	margin-top:0px;
 	margin-right: auto;
 	margin-bottom: auto;
 	margin-left: auto;
-	padding-top: 20px;
+	padding-top: 1px;
 	padding-right: 10px;
-	padding-bottom: 20px;
+	padding-bottom: 1px;
 	padding-left: 10px;
 	text-align: center;
 	vertical-align: middle;
@@ -178,8 +219,9 @@ footer .footer_column p {
 }
 .footer_banner {
 	background-color: #B3B3B3;
-	padding-top: 60px;
-	padding-bottom: 60PX;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5PX;
 	margin-bottom: 0px;
 	background-image: url(../images/pattern.png);
 	background-repeat: repeat;

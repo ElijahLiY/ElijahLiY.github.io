@@ -1,0 +1,101 @@
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* 删除上边距可以解决边距会超出其包含的 div 的问题。剩余的下边距可以使 div 与后面的任何元素保持一定距离。 */
+	padding-right: 15px;
+	padding-left: 15px; /* 向 div 内的元素侧边（而不是 div 自身）添加填充可避免使用任何方框模型数学。此外，也可将具有侧边填充的嵌套 div 用作替代方法。 */
+}
+a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
+	border: none;
+}
+
+#baidu{
+	padding-bottom: 20px
+}
+.input {line-height: 30px;
+	font-weight: 400px;
+	width: 300px;
+}
+.button{line-height: 30px;
+	font-weight: 400px;
+}
+.img {
+	height: 70px;
+}
+#mywords{
+	float:center;
+	font-family:"Times New Roman", Times, serif;
+	margin-right:250px;
+	background:#F90;
+	color:#111;}
+#mywords.h3{ font-family:sans-serif, serif;}
+#menu{
+	float:center;
+    margin-right:3px;}
+
+#mysiteimgs{
+	background:#FFF;
+	float: left;
+	margin-left: 50px;
+	margin-right: 0px;
+          width:410px;
+		  }
+
+#jjsiteimgs{background:#FFF;
+	float: right;
+	margin-right: 50px;
+          width:410px;
+		  }
+
+#list {float:right;
+       width:800px;
+	   margin-right:262px;
+	   background:#F36;}
+
+/* ~~ 此固定宽度容器包含其它 div ~~ */
+.container {
+	width: 960px;
+	background: #FFF;
+	margin: 0 auto; /* 侧边的自动值与宽度结合使用，可以将布局居中对齐 */
+}
+
+/* ~~ 标题未指定宽度。它将扩展到布局的完整宽度。标题包含一个图像占位符，该占位符应替换为您自己的链接徽标 ~~ */
+.header {
+	background: #ADB96E;
+}
+
+.content {
+
+	padding: 10px 0;
+}
+
+
+
+/* ~~ 脚注 ~~ */
+.footer {
+	padding: 10px 0;
+	background: #CCC49F;
+}
+
+#footer {
+	padding: 10px 0;
+	background: #CCC49F;
+	weith:300px;
+	     font-family:Verdana, Geneva, sans-serif;
+         font-size:small;
+		 text-align:center;
+		 padding:15px;		 clear:both;
+		 color:#eed;
+}
+.clear{text-align:center; clear:both;}
+.otherlisthover{background-color:#0F0; font:Verdana, Geneva, sans-serif; font-size:24px;}
+.otherlist{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
+.otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
+#otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}.baidu {
+}

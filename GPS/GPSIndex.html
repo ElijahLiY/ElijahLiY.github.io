@@ -4,15 +4,55 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Light Theme</title>
+<title>GPS显控</title>
+	
 <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
+<link href="java/my_js.js" type="text/javascript">
+	<script type="text/javascript">
+		function showtab(v){
+			var divs = document.getElementsByClassName("tab_css");
+			for(var i = 0; i < divs.length; i++) {
+			  var divv = divs[i];
+			  var tit_bg = document.getElementById("tab" + (i+1));
+			  if(divv == document.getElementById("tab" + v + "_content")) {
+				divv.style.display = "block";
+				tit_bg.style.backgroundColor = "#52bad5";
+			  } else {
+				divv.style.display = "none";
+				tit_bg.style.backgroundColor = "#B3B3B3";
+			  }
+			}
+	}
+		function showtime(){	
+			var time = new Date(); //获得当前时间
+			var year = time.getFullYear(); //获得年月日
+			var month = time.getMonth(); //获得年月日
+			var date = time.getDate(); //获得年月日
+			var hour = time.getHours(); //获得小时、分钟、秒
+			var minute = time.getMinutes();
+			var second = time.getSeconds();
+			if (minute < 10) //如果分钟只有1位，补0显示
+				minute = "0" + minute;
+			if (second < 10) //如果秒数只有1位，补0显示
+				second = "0" + second;
+			/*设置span内容为当前时间*/
+			document.getElementById("date").innerHTML = year + "年" + month + "月" + date + "日";
+			document.getElementById('hour').innerHTML = hour + ":" 
+			document.getElementById('munite').innerHTML = minute + ":"
+			document.getElementById('second').innerHTML = second
+			setTimeout("showtime()", 1000);
+			
+		}
+	</script>
+
+	
 </head>
 <body>
 <!-- Main Container -->
 <div class="container"> 
   <!-- Navigation -->
   <header> <a href="">
-    <h4 class="logo">高亮</h4>
+    <h4 class="logo">GPS显控</h4>
     </a>
     <nav>
       <ul>
@@ -24,45 +64,86 @@
   </header>
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <h2 class="hero_header">宣传 <span class="light">高亮</span></h2>
+    <h2 class="hero_header">LDCLZ技术二室</h2>
     <p class="tagline">简介</p>
   </section>
 
 
   <!-- Parallax Section -->
   <section class="banner" >
-    <h2 class="parallax" >核心框图</h2>
-	  <table class="table1" border="5px">
-		  <tbody class="words">
-				<tr>
-				  <td>时间日期</td>
-				</tr>
-				<tr>
-				  <td>卫星定位</td>
-				</tr>
-				<tr>
-				  <td>卫星定向</td>
-				</tr>
-				<tr>
-				  <td>卫星状态</td>
-				</tr>
-				<tr>
-				  <td>精密演算</td>
-				</tr>
-				<tr>
-				  <td>地图显示</td>
-				</tr>
-				<tr>
-				  <td>参数设置</td>
-				</tr>
-				<tr>
-				  <td>&nbsp;</td>
-				</tr>
-  </tbody>
-		  
-</table>
+      <h2 class="titwords" >核心框图</h2>
+	  
+	  <table width="609" height="426" border="2">
+			  <th width="128" scope="row" id="th1">		  
+				  <ul class="titlist">
+					  <li id="tab1" onClick="showtab(1)"><a>时间日期</a></li>
+					  <li id="tab2" onClick="showtab(2)"><a>卫星定位</a></li>
+					  <li id="tab3" onClick="showtab(3)"><a>卫星定向</a></li>
+					  <li id="tab4" onClick="showtab(4)"><a>卫星状态</a></li>
+					  <li id="tab5" onClick="showtab(5)"><a>精密演算</a></li>
+					  <li id="tab6" onClick="showtab(6)"><a>地图显示</a></li>
+					  <li id="tab7" onClick="showtab(7)"><a>参数设置</a></li>
+					  <li id="tab8" onClick="showtab(8)"></li>
+					  
+				  </ul>
+				</th>
+			  <th width="360" id="th2">
+				  <ul class="tab" id="tab_content">
+					  <div class="tab_css" id="tab1_content" style="display: block">
+						  <div id="tab1_span1">
+							  <p>现在的日期是：</p>
+							  <span id="date"></span>
+							  </div>
+							  <span id="hour">时</span>
+							  <span id="munite">分</span>
+							  <span id="second">秒</span>
+							<script type="text/javascript">
+							  showtime();
+							  </script>
+						  <ul>
+						  <li>时区</li>
+						  <li>当前时间</li>
+						  </ul>
+
+					  </div>
+					  
+					  <div class="tab_css" id="tab2_content" style="display: none">
+						  <ul id="tab2_con1">
+						  <li>CGC-2000&nbsp;&nbsp;&nbsp;|</li>
+						  <li>DX-2坐标系</li>
+					  	  </ul>
+						  <table id="tab2_con2" width="200" border="1">
+								  <tr>
+									  <th scope="row">经度</th>
+									  <td>&nbsp;</td>
+									</tr>
+									<tr>
+									  <th scope="row">维度</th>
+									  <td>&nbsp;</td>
+									</tr>
+									<tr>
+									  <th scope="row">高程</th>
+									  <td>&nbsp;</td>
+									</tr>
+								</table>
+
+					  
+<!--						  <img alt="糟了，图没了" src="images/campus.jpg" width="200" height="200">-->
+					  
+					  </div>
+					  <div class="tab_css" id="tab3_content" style="display: none">页面三</div>
+					  <div class="tab_css" id="tab4_content" style="display: none">页面四</div>
+					  <div class="tab_css" id="tab5_content" style="display: none">页面五</div>
+					  <div class="tab_css" id="tab6_content" style="display: none">页面六</div>
+					  <div class="tab_css" id="tab7_content" style="display: none">页面七</div>
+					  <div class="tab_css" id="tab8_content" style="display: none">页面八</div>
+				  </ul>
+				</th>
+			
+		</table>
 
   </section>
+	
   <!-- More Info Section -->
   <footer>
   </footer>
@@ -71,10 +152,10 @@
   <section class="footer_banner" id="contact">
     <h2 class="hidden">Footer Banner Section </h2>
     <p class="words">脚注 &amp; 升级日期</p>
-    <div class="button">联系我们+"<\br>"+15688888888</div>
+    <div class="button">联系我们<br>15688888888</div>
   </section>
   <!-- Copyrights Section -->
-  <div class="copyright">&copy;2020年9月3日<strong>@雷达测量站李迎春、吕青</strong></div>
+  <div class="copyright">&copy;2020年9月3日，版权所有<strong>雷达测量站二室@李迎春、@吕青</strong></div>
 </div>
 <!-- Main Container Ends -->
 </body>
