@@ -1,5 +1,5 @@
 body {
-	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	font: 100%/1.4 Verdana, Arial, Helvetica,italic, sans-serif;
 	background: #42413C;
 	margin: 0;
 	padding: 0;
@@ -12,8 +12,9 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	border: none;
 }
 
-#baidu{
-	padding-bottom: 20px
+.input_form{
+	padding-bottom: 15px;
+/*	padding-top: 20px;*/
 }
 .input {line-height: 30px;
 	font-weight: 400px;
@@ -47,10 +48,8 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 .fanyi_text{
 	height:50px;
 }
-#list {float:right;
-       width:800px;
-	   margin-right:262px;
-	   background:#F36;}
+#lzwords{line-height: 50px;}
+
 
 /* ~~ 此固定宽度容器包含其它 div ~~ */
 .container {
@@ -84,12 +83,6 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	     font-family:Verdana, Geneva, sans-serif;
          font-size:small;
 		 text-align:center;
-		 padding:15px;		 clear:both;
+	clear:both;
 		 color:#eed;
-}
-.clear{text-align:center; clear:both;}
-.otherlisthover{background-color:#0F0; font:Verdana, Geneva, sans-serif; font-size:24px;}
-.otherlist{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
-.otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}
-#otherlistout{background-color:#F90; font-size:18px; font:"Arial Black", Gadget, sans-serif;}.baidu {
 }
