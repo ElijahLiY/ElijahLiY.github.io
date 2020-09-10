@@ -5,11 +5,8 @@ body {
 	padding: 0;
 	color: #000;
 }
-
-h1, h2, h3, h4, h5, h6, p {
-	margin-top: 0;	 /* 删除上边距可以解决边距会超出其包含的 div 的问题。剩余的下边距可以使 div 与后面的任何元素保持一定距离。 */
-	padding-right: 15px;
-	padding-left: 15px; /* 向 div 内的元素侧边（而不是 div 自身）添加填充可避免使用任何方框模型数学。此外，也可将具有侧边填充的嵌套 div 用作替代方法。 */
+.header h1 {
+	margin-top: 0
 }
 a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
 	border: none;
@@ -28,13 +25,7 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 .img {
 	height: 70px;
 }
-#mywords{
-	float:center;
-	font-family:"Times New Roman", Times, serif;
-	margin-right:250px;
-	background:#F90;
-	color:#111;}
-#mywords.h3{ font-family:sans-serif, serif;}
+
 #menu{
 	float:center;
     margin-right:3px;}
@@ -47,12 +38,15 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
           width:410px;
 		  }
 
+
 #jjsiteimgs{background:#FFF;
 	float: right;
 	margin-right: 50px;
           width:410px;
 		  }
-
+.fanyi_text{
+	height:50px;
+}
 #list {float:right;
        width:800px;
 	   margin-right:262px;
