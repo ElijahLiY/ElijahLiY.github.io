@@ -1,2 +1,48 @@
-1，将页面中的部分list改成div
-2，进行第二个界面的编辑
+1，将页面中的部分list改成div	ok
+2，进行第二个界面的编辑	ok
+3，利用画图制作表盘
+4，第一张表格中的时间上加上一个边框
+5，
+数据传输关系
+
+第一页
+项目	name
+年	yea
+月	mon
+日	day
+时	hou
+分	min
+秒	sec
+当地时间	comp_time
+
+第二页
+项目	name
+cgcs坐标维度	cgcs_wd
+经度	cgcs_jd
+高程	cgcs_gc
+同理dx-2
+
+维度误差	wd_err
+经度误差	jd_err
+高程误差	gc_err
+2D误差	2D_err
+3D误差	3D_err
+海平面分离	hpmfl
+
+第三页
+项目	name
+航向角	head
+航向角误差	head_err
+俯仰角误差	fy_err
+翻滚角误差	fg_err
+东向	east
+北向	north
+天向	sky
+基线长度	baseline
+基线预设长度	baseline_pre
+
+第四页
+项目	name
+gps数目	num_gps
+glonass数目	num_glo
+伽利略数目	num_gal 
