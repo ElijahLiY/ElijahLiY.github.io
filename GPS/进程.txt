@@ -13,7 +13,8 @@
 时	hou
 分	min
 秒	sec
-当地时间	comp_time
+当地时间	local_time
+本地时区 local_zone
 
 第二页
 项目	name
@@ -22,6 +23,7 @@ cgcs坐标维度	cgcs_wd
 高程	cgcs_gc
 同理dx-2
 
+定位类型	dwlx
 维度误差	wd_err
 经度误差	jd_err
 高程误差	gc_err

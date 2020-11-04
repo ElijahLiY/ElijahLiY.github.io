@@ -152,11 +152,13 @@ table{
 }
 */
 .timebox{
-	height:100px;
-	width: 100px;
-	color: aqua;
-	border-color: #C22D30;
-/*	border: thick;*/
+	font-size: 40px;
+	margin: auto;
+/*	height:80px;*/
+	width: 200px;
+	color: black;
+	clear: right;
+/*	border-color: #C22D30;*/
 	}
 
 

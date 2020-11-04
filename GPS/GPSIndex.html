@@ -39,11 +39,24 @@
 				second = "0" + second;
 			/*设置span内容为当前时间*/
 			document.getElementById("date").innerHTML = year + "年" + month + "月" + date + "日";
-			document.getElementById('hour').innerHTML = hour + ":" 
-			document.getElementById('munite').innerHTML = minute + ":"
-			document.getElementById('second').innerHTML = second
-			setTimeout("showtime()", 1000);
-			
+			document.getElementById('hms').innerHTML = hour +":" + minute + ":" + second
+			setTimeout("showtime()", 1000);		
+		}
+//		获取时区和本地时间
+		function show_timezone(){
+			var time = new Date(); //获得当前时间
+			var time_zone = time.getTimezoneOffset()
+			var hour = time.getHours(); //获得小时、分钟、秒
+			var minute = time.getMinutes();
+			var second = time.getSeconds();
+			if (minute < 10) //如果分钟只有1位，补0显示
+				minute = "0" + minute;
+			if (second < 10) //如果秒数只有1位，补0显示
+				second = "0" + second;
+			/*设置span内容为当前时间*/
+			document.getElementById("local_time").innerHTML = hour +":" + minute + ":" + second;
+			document.getElementById('time_zone').innerHTML = time_zone/60;
+			setTimeout("show_timezone()", 1000);	
 		}
 	</script>
 
@@ -97,17 +110,18 @@
 							  <span id="date"></span>
 							  </div>
 <!--						  放在一个正方形框框里-->
-							  <div class="timebox" id="hour">时</div>
-							  <span class="timebox" id="munite">分</span>
-							  <span class="timebox" id="second">秒</span>
-<!--						  调用显示时间内函数，在这里调用最好-->
-							<script type="text/javascript">
-							  showtime();
-							  </script>
+						  	  <div class="timebox" id="hms"></div>
+
+<!--						  显示当前时区和计算机时间-->
 						  <ul>
-						  <li>时区</li>
-						  <li>当前时间</li>
-						  </ul>
+						  <li>时区<p id="time_zone"></p></li>
+						  <li>当前时间<p id="local_time"></p></li>
+						</ul>
+<!--						  调用显示时间内函数，在这里调用最好-->
+							  <script type="text/javascript">
+								showtime();
+							  	show_timezone();
+							  </script>
 
 					  </div>
 					  
