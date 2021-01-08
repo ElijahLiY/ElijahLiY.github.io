@@ -11,7 +11,7 @@
 <!--<script type="text/javascript" src="static/jquery-3.5.1.min.js"></script>-->
 </head>
 	
-<body onLoad="show_time()">
+<body onLoad="main()">
 <div class="container" align="center">
   <div class="header"><h1><img src="static/image/my_img/award.gif" alt="" width="71" height="90"/>Elijah网址导航</h1>
     <!-- end .header -->
@@ -28,49 +28,48 @@
   			<span><button type="submit" class="button" >谷歌一下</button></span> 
 		</form>
     </div>
+<!--			显示时间-->
+	<p id="time">时间未刷新</p>
+<!--			显示励志语句-->
+	<span id="lzwords">不离不弃</span>
 <!--		我的部分-->
-		<div id="mysiteimgs" align="center">
-			<p><h2>Elijah的工作区</h2></p>
-			<p id="time">时间未刷新</p>
-      		<a title="百度" href="http://www.baidu.com/" target="hah"><img alt="慢点，图得等一会" title="百度" class="img" src="static/image/my_img/baidu.jpg"/></a>    	
-      		<a title="交大主页" href="http://www.xjtu.edu.cn/" target="_blank"><img alt="慢点，图得等一会" title="交大主页" class="img" src="static/image/my_img/xjtu.jpg"/></a>    	
+		
+		<div id="lif_siteimgs" align="center">	
+<!--			<p><h2>常用网站</h2></p>-->
+			<a title="百度" href="http://www.baidu.com/" target="hah"><img alt="慢点，图得等一会" title="百度" class="img" src="static/image/my_img/baidu.jpg"/></a>    	
+      		<a href="https://www.zhihu.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/知乎.jpg" /></a>    	
     		<a href="https://www.bilibili.com/" target="_blank"><img alt="慢点，图得等一会" title="bilibili" class="img" src="static/image/my_img/bilibili.jpg"/></a>
             <a href="https://www.taobao.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/淘宝.jpg"/></a>
             <a href="https://www.jd.com//" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/京东.jpg"/></a>
-            <a href="https://github.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/github.jpg" /></a>
-            <a href="https://www.zhihu.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/知乎.jpg" /></a>
 			<a href="https://wuhan.anjuke.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/安居客.jpg" /></a>
 			<a href="https://www.qunar.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/去哪网.jpg" /></a>
-      		<a href="http://www.renren.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/renren.jpg" /></a>
-      		<a href="https://www.icourse163.org/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/慕课.jpg" /></a>
-			<a href="http://mail.163.com/" target="_blank"><img alt="" class="img" src="static/image/my_img/163mail1.jpg" /></a>
-      		<a href="http://www.icbc.com.cn/" target="_blank"><img alt="" class="img" src="static/image/my_img/icbc1.jpg" /></a>
 			<a href="http://user.qzone.qq.com/1034811160" target="_blank"><img alt="" class="img" src="static/image/my_img/qzone.png" /></a>
-      		<a href="http://www.sina.com.cn/" target="_blank"><img alt="" class="img" src="static/image/my_img/xinlang.jpg" /></a>
-      		<a href="http://t.qq.com/jiasiming000" target="_blank"><img alt="" class="img" src="static/image/my_img/Tencentblog.jpg" /></a>
-            <a href="https://www.ixueshu.com/" target="_blank"><img alt="" class="img" src="static/image/my_img/爱学术.png" /></a>
+			<a href="http://t.qq.com/jiasiming000" target="_blank"><img alt="" class="img" src="static/image/my_img/Tencentblog.jpg" /></a>	
+		</div>
+		<div id="mysiteimgs" align="center">
+			<p><h2>Elijah的导航</h2></p>
+			<a title="交大主页" href="http://www.xjtu.edu.cn/" target="_blank"><img alt="慢点，图得等一会" title="交大主页" class="img" src="static/image/my_img/xjtu.jpg"/></a>
+      		<a href="https://www.icourse163.org/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/慕课.jpg" /></a>
+			<a href="http://mail.163.com/" target="_blank"><img alt="" class="img" src="static/image/my_img/163mail1.jpg" 
+            <a href="https://github.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/github.jpg" /></a>
+            <a href="http://www.icbc.com.cn/" target="_blank"><img alt="" class="img" src="static/image/my_img/icbc1.jpg" /></a>
+			<a href="https://www.ixueshu.com/" target="_blank"><img alt="" class="img" src="static/image/my_img/爱学术.png" /></a>
 			<a href="http://www.ccjt.net/" target="_blank"><img alt="" class="img" src="static/image/my_img/ccjt.gif" /></a>
+			<a href="http://www.renren.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/renren.jpg" /></a>
    	   </div>
 <!--	静静的工作部分-->
 		<div id="jjsiteimgs" align="center">
-			<p><h2 onClick="main()"><a>静的工作区</a></h2></p>
-			<span id="lzwords"></span>
-				<script type="text/javascript">
-					var lz = ["天行健，君子以自強不息，地勢坤，君子以厚德载物","如果放弃太早，你永远都不知道自己会错过什么","你特么的看看你现在的样子?还是我爱的那个你么","你的选择是做或不做，但不做就永远不会有机会", "你必须成功，因为你不能失败","人生有两出悲剧：一是万念俱灰，另一是踌躇满志","遇到困难时不要抱怨，既然改变不了过去，那么就努力改变未来","只要功夫深，铁杵磨成针", "用理想去成就人生，不要蹉跎了岁月","永不言败是追究者的最佳品格", "目标的实现建立在我要成功的强烈愿望上","保持激情;只有激情，你才有动力，才能感染自己和其他人", "别人能做到的事，自己也可以做到","学习必须如蜜蜂一样，采过许多花，这才能酿出蜜来","努力了不一定能够成功，但是放弃了肯定是失败", "生命有期限 爱却无限",'对我而言 你就是整个世界',"幸福是你喜欢的人du也喜欢你","你的笑容是我最深的牵zhi挂","爱不会因为时间而变得乏味","爱是一种无言的承诺 需要用心聆听", "爱是你我之间不变的深情","你我互为彼此的唯一","真心不会因为距离而遥远","你是我的一切 无人可以替代","爱是快乐忧愁的分享分担","来不及参与你的过去 但我不会错过你的未来","我会陪你走过所有的阴天和艳阳天 直到一生一世","缘分让我们认识 感觉让我喜欢你","有一种默契叫心照不宜","爱你是一种幸福 想你是一种快乐","一切尽在不言中或许正是爱情的最高境界","相爱的两个 用心温暖着彼此","当他自然地牵起你的手的 他是爱你的","恋爱 就是些许笨拙 加上无数的好奇","因为有你 此生无悔", "当他静静地看着你微笑时 他是爱你的","爱是两人世界里 唯一的信仰", "时间让我爱上你 心中一切都是你","爱 是夜里与你数星星的安闲舒适", "诺言与谎言只有一字之差","满招损，谦受益","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃","不离不弃"];
-					var m = Math.random();
-					var n = Math.floor(m*(lz.length+1));
-						document.getElementById("lzwords").innerHTML = lz[n]+'</br>'
-				</script>
+			<p><h2><a>静的导航</a></h2></p>			
 <!--	英文直接翻译框-->
+<!--
 			<form method="get" action="https://translate.google.cn/">
 				<input type="textarea" class="fanyi_text" id="fanyi_inp" value="请输入英文……"/>
 				<input type="text" class="fanyi_text" id="fanyi_outp"/></form>
-			
+-->
       		<a href="https://docs.qq.com/desktop" target="_blank"><img alt="" title="这里可能是分享线上文档的吧" class="img" src="static/image/jingjing_img/腾讯文档.jpg"/></a>	
     		<a href="https://translate.google.cn/" target="_blank"><img alt="" title="英文不会点这里" class="img" src="static/image/jingjing_img/谷歌翻译.jpg"/></a>
 			<a href="http://samp.cas.cn/" target="_blank"><img alt="" title="设备共享平台" class="img" src="static/image/jingjing_img/设备共享平台.png"/></a>
             <a href="https://read.qxmd.com/" target="_blank"><img alt="" title="一个叫read的网站" class="img" src="static/image/jingjing_img/read.png"/></a>
-            <a href="https://www.zhihu.com/" target="_blank"><img alt="" title="不懂就问我吧" class="img" src="static/image/my_img/知乎.jpg" /></a>
       		<a href="http://www.126.com/" target="_blank"><img alt="" title="我可以收发邮件" class="img" src="static/image/jingjing_img/126邮箱.jpg" /></a>
 			<a href="http://las.ibp.ac.cn/" target="_blank"><img alt="" title="动物实验" class="img" src="static/image/jingjing_img/动物实验管理系统.png" /></a>
 			<a href="https://www.cell.com/cell/newarticles" target="_blank"><img alt="" title="看看有什么新文章吧" class="img" src="static/image/jingjing_img/cell.jpg" /></a>
@@ -84,8 +83,8 @@
 </div>
 		
    <div id="footer">
-	   <p>Copyright © 2012 XJTU. All Rights Reserved.Designed by <a href="About Elijah.html" target="_blank">Elijah</a></p>
-	   <p><a href="测试区\test.html" target="_blank">测试区</a></p>
+	   <p>Copyright © 2012 XJTU. All Rights Reserved.Designed by <a href="templates/About Elijah.html" target="_blank">Elijah</a></p>
+	   <p><a href="templates/About Elijah.html" target="_blank">测试区</a></p>
 	   <input type="button" onClick="main()" value="关闭窗口" />
   </div>
 </body>

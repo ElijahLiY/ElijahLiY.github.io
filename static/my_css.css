@@ -30,7 +30,12 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 #menu{
 	float:center;
     margin-right:3px;}
-
+#time{
+	position: relative;
+	top: -87px;
+	right: -33%;
+	margin: 0px;
+}
 #mysiteimgs{
 	background:#FFF;
 	float: left;
@@ -48,7 +53,10 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 .fanyi_text{
 	height:50px;
 }
-#lzwords{line-height: 50px;}
+#lzwords{
+	position: relative;
+	top: -96px;
+	left: -355px;}
 
 
 /* ~~ 此固定宽度容器包含其它 div ~~ */
