@@ -35,13 +35,21 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	top: -87px;
 	right: -33%;
 	margin: 0px;
+	font: italic;
+	font-size: 150%;
+	color: #BA4E00;
+}
+#lif_siteimgs{
+	position: relative;
+	top: 0%;
+	left: 0%;
 }
 #mysiteimgs{
 	background:#FFF;
 	float: left;
 	margin-left: 50px;
 	margin-right: 0px;
-          width:410px;
+    width:410px;
 		  }
 
 
@@ -54,9 +62,12 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	height:50px;
 }
 #lzwords{
+	font: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	position: relative;
-	top: -96px;
-	left: -355px;}
+	top: -120px;
+	left: -323px;
+	font-size: 150%;
+	color: #BA4E00;}
 
 
 /* ~~ 此固定宽度容器包含其它 div ~~ */
