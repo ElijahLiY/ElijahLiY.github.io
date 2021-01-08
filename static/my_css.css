@@ -63,9 +63,11 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 }
 #lzwords{
 	font: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+/*
 	position: relative;
 	top: -120px;
 	left: -323px;
+*/
 	font-size: 150%;
 	color: #BA4E00;}
 
