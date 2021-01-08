@@ -39,6 +39,10 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	font-size: 150%;
 	color: #BA4E00;
 }
+#websites{
+	position: relative;
+	top: -50px;
+}
 #lif_siteimgs{
 	position: relative;
 	top: 0%;
