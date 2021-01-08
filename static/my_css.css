@@ -62,7 +62,6 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	height:50px;
 }
 #lzwords{
-	font: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 /*
 	position: relative;
 	top: -120px;
