@@ -31,17 +31,13 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	float:center;
     margin-right:3px;}
 #time{
-	position: relative;
-	top: -87px;
-	right: -33%;
-	margin: 0px;
-	font: italic;
+	margin-right: 1px;
 	font-size: 150%;
 	color: #BA4E00;
 }
 #websites{
 	position: relative;
-	top: -50px;
+	top: -30px;
 }
 #lif_siteimgs{
 	position: relative;
@@ -55,9 +51,8 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	margin-right: 0px;
     width:410px;
 		  }
-
-
-#jjsiteimgs{background:#FFF;
+#jjsiteimgs{
+	background:#FFF;
 	float: right;
 	margin-right: 50px;
           width:410px;
@@ -72,9 +67,8 @@ a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认
 	left: -323px;
 */
 	font-size: 150%;
-	color: #BA4E00;}
-
-
+	color: #BA4E00;
+	height: 50px;}
 /* ~~ 此固定宽度容器包含其它 div ~~ */
 .container {
 	width: 960px;
