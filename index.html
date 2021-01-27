@@ -25,9 +25,24 @@
 				<li>首页</li>
 				<li>简介</li>
 				<li>相册</li>
-				<li>留言</li>
+				<li onClick="show_message_board()">留言</li>
 			</ul>
 		</div>
+		
+		<div class="mask"><!--留言蒙版-->
+		</div>
+		<div id="mb" class="message_board"><!--留言框-->
+			<div class="close_button"><!--关闭符号-->
+				X
+			</div>
+			<div class="tips"><!--留言提示-->
+			如果有什么建议或意见，在这里填写并提交，或者发送邮件至liyingchun1993@163.com，谢谢!</div>
+			<textarea class="input_board">请留言...
+			</textarea>
+			<button class="submit_button">提交</button><!--提交按钮-->
+		</div>
+		
+		
 	</div>
 	<div id="lzwords"><p>总有一句感动你</p><!--每日一句-->
 	</div>

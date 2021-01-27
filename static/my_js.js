@@ -85,4 +85,8 @@ function show_words(){
 function show_weather(){
 	alert("weather")
 }
-
+function show_message_board(){
+	//alert("ok!")
+	var q = document.getElementsByClassName("message_board");
+	q.style.display = "block";
+}
