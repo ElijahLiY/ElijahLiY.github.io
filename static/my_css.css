@@ -48,6 +48,7 @@ li {text-decoration: none;}
 	background-color: rgba(109,126,123,0.7);
 }
 .menu li{
+	cursor: pointer;
 	color: #151429;
 	display: inline;
 	line-height: 50px;
@@ -58,6 +59,20 @@ li {text-decoration: none;}
 }
 .menu li:hover{
 	background: #9ca5a2; 
+}
+.menu .developing_board{
+	font-size: 1.5em;
+	padding: 50px 0 50px 0;
+	display: none;
+	width: 400px;
+	height: 300px;
+	background: #fbfbfb;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;	
 }
 /*留言板*/
 .message_board{
@@ -72,7 +87,18 @@ li {text-decoration: none;}
 	right: 0;
 	margin: auto;
 }
-.message_board .close_button{
+.mask{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.5);
+}
+.close_button{/*用的都是相对位置，可以作为弹出框通用button，所以不加.message_board*/
+	font-size: 0.7em;
+	cursor: pointer;
 	border:2px dashed #000;
 	width: 20px;
 	height: 20px;

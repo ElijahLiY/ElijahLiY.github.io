@@ -86,7 +86,22 @@ function show_weather(){
 	alert("weather")
 }
 function show_message_board(){
-	//alert("ok!")
-	var q = document.getElementsByClassName("message_board");
-	q.style.display = "block";
+	document.getElementsByClassName("message_board")[0].style.display = "block";
+	document.getElementsByClassName("mask")[0].style.display = "block";
+}
+function kill_message_board(){
+	document.getElementsByClassName("message_board")[0].style.display = "none";
+	document.getElementsByClassName("mask")[0].style.display = "none";
+}
+function submit_message_board(){
+	document.getElementsByClassName("message_board")[0].style.display = "none";
+	document.getElementsByClassName("mask")[0].style.display = "none";
+}
+function show_developing_board(){
+	document.getElementsByClassName("developing_board")[0].style.display = "block";
+	document.getElementsByClassName("mask")[0].style.display = "block";
+}
+function kill_developing_board(){
+	document.getElementsByClassName("developing_board")[0].style.display = "none";
+	document.getElementsByClassName("mask")[0].style.display = "none";
 }
