@@ -1,106 +1,139 @@
+/*页面预设置*/
 body {
 	font: 100%/1.4 cursive, Arial, Helvetica,italic, sans-serif;
-	background: #42413C;
-	margin: 0;
+	background: #3f514d;
+	margin: 0;/*用户代理中margin为8*/
 	padding: 0;
-	color: #000;
+	color: #000;	
 }
-.header h1 {
-	margin-top: 0
-}
-/*所有标题的字体*/
-h1 h2 {font-family: cursive;}
 a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
 	border: none;
 }
+li {text-decoration: none;}
 
-.input_form{
-	padding-bottom: 15px;
-/*	padding-top: 20px;*/
+/*container设置*/
+.container {
+	position: relative;
+	width: 960px;
+	background: #c3c3c3;
+	margin: 0 auto; 
 }
-.input {line-height: 30px;
-	font-weight: 400px;
-	width: 300px;
+
+/*header设置*/
+.header{
+	padding-top: 30px;/*这是为了让菜单*/
+	height: 233px;
+	text-align: center;
+	background-color: rgba(109,126,123,0.5);
+	background-image: url("image/header-img.jpg");
+	background-size:contain;
+	background-repeat: no-repeat;
 }
-.button{line-height: 30px;
-	font-weight: 400px;
+.header .h1_img{
+	font-size: 1.4em;
+	color: #2b3e4f;
+	position: absolute;
+	top: 91px;
+	left: 20px;
 }
-.img {
+.header .h1_img h1 {
+	display: inline;
+	margin-top: 0
+}
+.header .h1_img img{
+	height: 50px;
+}
+.menu{
+	margin-top: 183px;
+	background-color: rgba(109,126,123,0.7);
+}
+.menu li{
+	color: #151429;
+	display: inline;
+	line-height: 50px;
+	font-size: 2em;
+	padding-left: 65px;
+	padding-right: 65px;
+	padding-bottom: 0px;
+}
+.menu li:hover{
+	background: #9ca5a2; 
+}
+
+/*search搜索栏和两个先挂件设置*/
+#lzwords{
+/*	border:1px dashed #000;*/
+	text-align: center;
+	width: 210px;
+	float: left;
+	font-size: 140%;
+	color: #18161a;
+	height: 100px;
+	margin: 30px 0 0 30px;
+/*	align-items: center;*/
+}
+#time{
+/*	border:1px dashed #000;*/
+	text-align: center;
+	float: right;
+	width: 210px;
+	font-size: 120%;
+	height: 100px;
+	margin: 16px 30px 0 0;
+	padding-top: 20px;
+}
+.search{
+	text-align: center;
+	margin:auto;
+}
+.search .input_form{
+	margin-top: 30px;
+}
+.search input{
+	background: #efefef;
+	border-color: #c3c3c3;
+	line-height: 30px;
+	width: 350px;
+}
+.search button{
+	font-size: 120%;
+	line-height: 26px;/*这里不知道为什么input和button对不齐，所以只能修正line-height和padding*/
+	padding-bottom: 5px;
+}
+
+/*网址导航正文*/
+.content{
+/*	background: #9ED89C;*/
+	text-align: center;
+}
+.content img{
 	height: 70px;
 }
-
-#menu{
-	float:center;
-    margin-right:3px;}
-#time{
-	font-family: cursive;
-	margin-right: 1px;
-	font-size: 150%;
-	color: #BA4E00;
-}
-#websites{
-	position: relative;
-	top: -30px;
-}
-#lif_siteimgs{
-	position: relative;
-	top: 0%;
-	left: 0%;
-}
-#mysiteimgs{
-	background:#FFF;
+.content .my_favorites{
 	float: left;
+	width:410px;
 	margin-left: 50px;
 	margin-right: 0px;
-    width:410px;
-		  }
-#jjsiteimgs{
-	background:#FFF;
+}
+.content .jingjing_favorites{
 	float: right;
+	width: 410px;
 	margin-right: 50px;
-          width:410px;
-		  }
-.fanyi_text{
-	height:50px;
 }
-#lzwords{
-	font-family: cursive;
-	font-size: 120%;
-	color: #BA4E00;
-	height: 50px;}
-/* ~~ 此固定宽度容器包含其它 div ~~ */
-.container {
-	width: 960px;
-	background: #FFF;
-	margin: 0 auto; /* 侧边的自动值与宽度结合使用，可以将布局居中对齐 */
+.content .vertical_line{
+	width: 2px;
+	height: 500px;
+	background: darkgray;
+	margin: auto;
 }
 
-/* ~~ 标题未指定宽度。它将扩展到布局的完整宽度。标题包含一个图像占位符，该占位符应替换为您自己的链接徽标 ~~ */
-.header {
-	background: #ADB96E;
-/*	background: #ADB96E;*/
-}
-
-.content {
-
-	padding: 10px 0;
-}
-
-
-
-/* ~~ 脚注 ~~ */
+/*这是页脚*/
 .footer {
 	padding: 10px 0;
-	background: #CCC49F;
-}
-
-#footer {
-	padding: 10px 0;
-	background: #CCC49F;
-	weith:300px;
-	     font-family:Verdana, Geneva, sans-serif;
-         font-size:small;
-		 text-align:center;
-	clear:both;
-		 color:#eed;
+	background: #abb1b1;
+	font-size:1em;
+	text-align:center;
+	font-family:Verdana, Geneva, sans-serif;
+	clear:both;/*防止高度坍塌造成页脚跑到浮动内容上面了*/
+	color:#eed;
 }

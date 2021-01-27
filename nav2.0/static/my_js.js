@@ -21,12 +21,9 @@ function show_time(){
     if (minute < 10) //如果分钟只有1位，补0显示
          minute = "0" + minute;
     if (second < 10) //如果秒数只有1位，补0显示
-            second = "0" + second;
-	//计算过年倒计时
-	var count_down = 12 - date;
-	if(count_down<0){count_down+=31;}
+            second = "0" + second;			
      //设置form内容为当前时间
-     document.getElementById('time').innerHTML = year + "年" + month+1 + "月" + date + "日" + "<br />"+ hour + ":" + minute + ":" + second + "<br />"+"离春节还有" + "<strong>" +count_down+"</strong>"+"天";
+     document.getElementById('time').innerHTML = year + "年" + month+1 + "月" + date + "日" + "<br />"+ hour + ":" + minute + ":" + second;
 	//1s后运行本身，达到重复运行的功效
 	setTimeout("show_time()", 1000);
 }
