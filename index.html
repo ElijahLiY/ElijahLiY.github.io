@@ -35,7 +35,7 @@
 				该功能正在开发，敬请期待...
 			</div>
 		</div>		
-		<div id="mb" class="message_board"><!--留言框-->
+		<div class="message_board"><!--留言框-->
 			<div class="close_button" onClick="kill_message_board()"><!--关闭符号-->
 				X
 			</div>
@@ -45,8 +45,9 @@
 			</textarea>
 			<button class="submit_button" onClick="submit_message_board()">提交</button><!--提交按钮-->
 		</div>
-		
-		
+		<div class="success_submit_board"><!--提交成功提示框-->
+			提交成功！感谢！
+		</div>	
 	</div>
 	<div id="lzwords"><p>总有一句感动你</p><!--每日一句-->
 	</div>
@@ -117,9 +118,12 @@
 	</div><!--content完-->
 </div><!--container完-->
 <div class="footer">
-	<p>Copyright © 2012 XJTU. All Rights Reserved.Designed by <a href="templates/About Elijah.html" target="_blank">Elijah</a></p>
-	<p><a href="templates/About Elijah.html" target="_blank">测试区</a></p>
-	<input type="button" onClick="main()" value="刷新JS效果" />
+	<p>Copyright © 2021. All Rights Reserved.Designed by <a href="templates/About Elijah.html" target="_blank">Elijah</a></p>
+	<nl class="former_vision">
+		<li><a href="nav1.0/index.html" target="_blank">Elijah网址导航1.0</a></li>	
+		<li><a href="nav2.0/index.html" target="_blank">Elijah网址导航2.0</a></li>	
+	</nl>
+	<button onClick="main()">刷新JS效果</button>
 </div><!--footer完-->
 	<!--=英文直接翻译框，待开发--><!--
 			<form method="get" action="https://translate.google.cn/">

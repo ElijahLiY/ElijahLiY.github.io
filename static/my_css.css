@@ -6,10 +6,17 @@ body {
 	padding: 0;
 	color: #000;	
 }
+a{
+	text-decoration-line: none;/*去掉下划线*/
+	color: #3f514d;/*改变颜色*/
+}
 a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
 	border: none;
 }
-li {text-decoration: none;}
+li {
+	text-decoration: none;
+	list-style-type: none;/*去掉小圆点*/
+}
 
 /*container设置*/
 .container {
@@ -129,6 +136,20 @@ li {text-decoration: none;}
 	margin: 7px 0 0 254px;
 	cursor: pointer;
 }
+.success_submit_board{
+	font-size: 1.5em;
+	padding: 35px 0 0 13px;
+	display: none;
+	width: 253px;
+	height: 66px;
+	background: #fbfbfb;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
 /*search搜索栏和两个先挂件设置*/
 #lzwords{
 /*	border:1px dashed #000;*/
@@ -205,4 +226,7 @@ li {text-decoration: none;}
 	font-family:Verdana, Geneva, sans-serif;
 	clear:both;/*防止高度坍塌造成页脚跑到浮动内容上面了*/
 	color:#eed;
+}
+.former_vision li{
+	display: inline;
 }

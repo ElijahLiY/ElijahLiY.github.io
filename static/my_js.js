@@ -96,6 +96,11 @@ function kill_message_board(){
 function submit_message_board(){
 	document.getElementsByClassName("message_board")[0].style.display = "none";
 	document.getElementsByClassName("mask")[0].style.display = "none";
+	document.getElementsByClassName("success_submit_board")[0].style.display = "block";
+	setTimeout("kill_success_submit_board()", 1000);
+}
+function kill_success_submit_board(){
+	document.getElementsByClassName("success_submit_board")[0].style.display = "none";
 }
 function show_developing_board(){
 	document.getElementsByClassName("developing_board")[0].style.display = "block";
