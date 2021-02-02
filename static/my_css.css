@@ -196,8 +196,13 @@ li {
 /*	background: #9ED89C;*/
 	text-align: center;
 }
+.content .useful_websites{
+	margin: 0 70px;
+}
 .content img{
-	height: 70px;
+	height: 80px;
+	width: 80px;
+	margin: 5px;
 }
 .content .my_favorites{
 	float: left;
