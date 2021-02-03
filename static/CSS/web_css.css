@@ -17,7 +17,6 @@ ul li {
 	text-decoration: none;
 	list-style-type: none;/*去掉小圆点*/
 }
-
 /*container设置*/
 .container {
 	position: relative;
@@ -32,7 +31,7 @@ ul li {
 	height: 233px;
 	text-align: center;
 	background-color: rgba(109,126,123,0.5);
-	background-image: url("image/header-img.jpg");
+	background-image: url("../image/header-img.jpg");
 	background-size:contain;
 	background-repeat: no-repeat;
 }
