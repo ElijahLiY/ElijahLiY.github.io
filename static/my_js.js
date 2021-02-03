@@ -86,27 +86,43 @@ function show_weather(){
 	alert("weather")
 }
 function show_message_board(){
-	document.getElementsByClassName("message_board")[0].style.display = "block";
-	document.getElementsByClassName("mask")[0].style.display = "block";
+	document.getElementsByClassName("message_board")[0].style.display = "block";//显示留言板
+	document.getElementsByClassName("mask")[0].style.display = "block";//显示灰色蒙版
 }
 function kill_message_board(){
-	document.getElementsByClassName("message_board")[0].style.display = "none";
-	document.getElementsByClassName("mask")[0].style.display = "none";
+	document.getElementsByClassName("message_board")[0].style.display = "none";//关掉留言板
+	document.getElementsByClassName("mask")[0].style.display = "none";//关掉灰色蒙版
 }
 function submit_message_board(){
-	document.getElementsByClassName("message_board")[0].style.display = "none";
-	document.getElementsByClassName("mask")[0].style.display = "none";
-	document.getElementsByClassName("success_submit_board")[0].style.display = "block";
-	setTimeout("kill_success_submit_board()", 1000);
+	document.getElementsByClassName("message_board")[0].style.display = "none";//关掉留言板
+	document.getElementsByClassName("mask")[0].style.display = "none";//关掉灰色蒙版
+	document.getElementsByClassName("success_submit_board")[0].style.display = "block";//显示提交成功字样
+	setTimeout("kill_success_submit_board()", 1000);//一秒后调用关掉字样函数
 }
 function kill_success_submit_board(){
-	document.getElementsByClassName("success_submit_board")[0].style.display = "none";
+	document.getElementsByClassName("success_submit_board")[0].style.display = "none";//关掉提交成功字样
 }
 function show_developing_board(){
-	document.getElementsByClassName("developing_board")[0].style.display = "block";
-	document.getElementsByClassName("mask")[0].style.display = "block";
+	document.getElementsByClassName("developing_board")[0].style.display = "block";//显示正在开发提示板
+	document.getElementsByClassName("mask")[0].style.display = "block";//显示灰色蒙版
 }
 function kill_developing_board(){
-	document.getElementsByClassName("developing_board")[0].style.display = "none";
-	document.getElementsByClassName("mask")[0].style.display = "none";
+	document.getElementsByClassName("developing_board")[0].style.display = "none";//关掉正在开发提示版
+	document.getElementsByClassName("mask")[0].style.display = "none";//关掉灰色蒙版
+}
+function show_tips(){
+	document.getElementsByClassName("mask")[0].style.display = "block";//显示灰色蒙版
+	document.getElementsByClassName("tips")[0].style.display = "block";//显示提示板
+}
+function kill_tips(){
+	document.getElementsByClassName("mask")[0].style.display = "none";//关掉灰色蒙版
+	document.getElementsByClassName("tips")[0].style.display = "none";//关掉正在开发提示版
+}
+function show_photo_album(){
+	document.getElementsByClassName("content")[0].style.display = "none";//关掉网址导航部分
+	document.getElementsByClassName("album")[0].style.display = "block";//显示相册部分
+}
+function show_content(){
+	document.getElementsByClassName("content")[0].style.display = "block";//显示网址导航部分
+	document.getElementsByClassName("album")[0].style.display = "none";//关掉相册部分
 }

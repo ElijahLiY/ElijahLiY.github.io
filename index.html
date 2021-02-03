@@ -23,9 +23,9 @@
 		</div>	
 		<div class="menu"><!--菜单栏-->
 			<ul>
-				<li onClick="show_developing_board()">首页</li>
-				<li onClick="show_developing_board()">简介</li>
-				<li onClick="show_developing_board()">相册</li>
+				<li onClick="show_content()">首页</li>
+				<li onClick="show_photo_album()">相册</li>
+				<li onClick="show_tips()">提示</li>
 				<li onClick="show_message_board()">留言</li>
 			</ul>
 			<div class="developing_board"><!--正在开发提示板-->
@@ -34,12 +34,23 @@
 				</div>
 				该功能正在开发，敬请期待...
 			</div>
+			<div class="tips"><!--使用提示板-->
+				<div class="close_button" onClick="kill_tips()"><!--关闭符号-->
+					X
+				</div>
+				<ol>
+					<li>打开网页点一下tab键直接开始百度搜索</li>
+					<li>如果日期没有显示可以按一下网页底部刷新JS按钮</li>
+					<li>鼠标放在网站图标上，1秒后会看到提示</li>
+					<li></li>
+				</ol>
+			</div>
 		</div>		
 		<div class="message_board"><!--留言框-->
 			<div class="close_button" onClick="kill_message_board()"><!--关闭符号-->
 				X
 			</div>
-			<div class="tips"><!--留言提示-->
+			<div class="message_board_tips"><!--留言提示-->
 				如果有什么建议或意见，在这里填写并提交，或者发送邮件至liyingchun1993@163.com，谢谢!</div>
 			<textarea class="input_board">请留言...
 			</textarea>
@@ -49,37 +60,36 @@
 			提交成功！感谢！
 		</div>	
 	</div>
-	<div id="lzwords"><p>总有一句感动你</p><!--每日一句-->
-	</div>
-	<div id="time"><p>时间未刷新</p><!--显示时间-->
-	</div>
-    <div class="search"><!--百度，谷歌搜索框-->
-    	<form action="http://www.baidu.com/s" target="_blank" class="input_form">
-			<input name="word" type="text"> 
-  			<button type="submit">百度一下</button> 
-		</form>
-    	<form action="https://www.google.com/search" target="_blank" class="input_form">
-			<input name="q" type="text"> 
-  			<button type="submit">谷歌一下</button> 
-		</form>
-    </div>
-
 	<div class="content"><!--网址导航正文-->
+		<div id="lzwords"><p>总有一句感动你</p><!--每日一句-->
+		</div>
+		<div id="time"><p>时间未刷新</p><!--显示时间-->
+		</div>
+		<div class="search"><!--百度，谷歌搜索框-->
+    		<form action="http://www.baidu.com/s" target="_blank" class="input_form">
+				<input name="word" type="text"> 
+  				<button type="submit">百度一下</button> 
+			</form>
+    		<form action="https://www.google.com/search" target="_blank" class="input_form">
+				<input name="q" type="text"> 
+  				<button type="submit">谷歌一下</button> 
+			</form>
+    	</div>
 		<div class="useful_websites"><!--常用网站导航-->
 			<h2>常用网站</h2>
-			<a title="百度" href="http://www.baidu.com/" target="hah"><img alt="慢点，图得等一会" title="百度" class="img" src="static/image/my_img/baidu.jpg"/></a>    	
-      		<a href="https://www.zhihu.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/知乎.jpg" /></a>
-			<a href="https://www.cnki.net/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/中国知网.png" /></a>
-    		<a href="https://www.bilibili.com/" target="_blank"><img alt="慢点，图得等一会" title="bilibili" class="img" src="static/image/my_img/bilibili.jpg"/></a>
-        	<a href="https://www.taobao.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/淘宝.jpg"/></a>
-        	<a href="https://www.jd.com//" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/京东.jpg"/></a>
-			<a href="https://ke.qq.com/" target="_blank"><img alt="" class="img" src="static/image/my_img/腾讯课堂.jpg" /></a>
-			<a href="https://www.icourse163.org/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/慕课.jpg" /></a>
-			<a href="https://wuhan.anjuke.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/安居客.jpg" /></a>
-			<a href="https://www.qunar.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/去哪网.jpg" /></a>
-			<a href="http://user.qzone.qq.com/1034811160" target="_blank"><img alt="" class="img" src="static/image/my_img/qzone.png" /></a>
-			<a href="https://map.baidu.com/" target="_blank"><img alt="" class="img" src="static/image/my_img/百度地图.jpg" /></a>
-			<a href="http://www.renren.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/renren.jpg" /></a>		
+			<a title="百度" href="http://www.baidu.com/" target="_blank"><img alt="慢点，图得等一会" title="百度" class="img" src="static/image/my_img/baidu.jpg"/></a>    	
+      		<a title="这里查到的东西稍微靠谱一点" href="https://www.zhihu.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/知乎.jpg" /></a>
+			<a title="插点国内的文献" href="https://www.cnki.net/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/中国知网.png" /></a>
+    		<a title="b站无敌" href="https://www.bilibili.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/bilibili.jpg"/></a>
+        	<a title="你想剁手了吗？" href="https://www.taobao.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/淘宝.jpg"/></a>
+        	<a title="你又想剁手了吗？" href="https://www.jd.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/京东.jpg"/></a>
+			<a title="在这里上上课" href="https://ke.qq.com/" target="_blank"><img alt="" class="img" src="static/image/my_img/腾讯课堂.jpg" /></a>
+			<a title="搜一些高校的精品课程" href="https://www.icourse163.org/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/慕课.jpg" /></a>
+			<a title="查查房子有没有涨价" href="https://wuhan.anjuke.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/安居客.jpg" /></a>
+			<a title="买火车票和住宿" href="https://www.qunar.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/去哪网.jpg" /></a>
+			<a title="要进去怀旧吗？" href="http://user.qzone.qq.com/1034811160" target="_blank"><img alt="" class="img" src="static/image/my_img/qzone.png" /></a>
+			<a title="看看地图我们有多远" href="https://map.baidu.com/" target="_blank"><img alt="" class="img" src="static/image/my_img/百度地图.jpg" /></a>
+			<a title="这里才是真正的怀旧天堂" href="http://www.renren.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/my_img/renren.jpg" /></a>		
 		</div>
 		<div class="my_favorites"><!--我的网址导航-->
 			<h2>Elijah的网址导航栏</h2>
@@ -116,6 +126,11 @@
 		<div class="vertical_line">
 		</div>
 	</div><!--content完-->
+	<div class="album">
+		<div class="photo_tips"><!--正在开发提示板-->
+			点开也没用，都说了该功能正在开发，哼！...
+		</div>
+	</div><!--album完-->
 </div><!--container完-->
 <div class="footer">
 	<p>Copyright © 2021. All Rights Reserved.Designed by <a href="templates/About Elijah.html" target="_blank">Elijah</a></p>
