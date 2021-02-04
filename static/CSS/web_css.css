@@ -100,6 +100,9 @@ ul li {
 	margin: 0 50px 0 80px;
 	padding: 0;
 }
+.menu .tips ol .round_mode_off_button,
+.menu .tips ol .round_mode_on_button{display: inline;cursor: pointer;}
+.menu .tips ol .round_mode_off_button{display: none;}
 /*留言板*/
 .message_board{
 	display: none;
@@ -224,6 +227,14 @@ ul li {
 	height: 80px;
 	width: 80px;
 	margin: 5px;
+}
+.content .useful_websites img{/*常用网站稍微紧凑点*/
+	height: 76px;
+	width: 76px;
+	margin: 4px;
+}
+.img{/*因为圆角要经过js控制，所以每个图片有类名，即img，其实跟.content img指向一样*/
+	border-radius: 20%;
 }
 .content .my_favorites{
 	float: left;

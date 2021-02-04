@@ -126,3 +126,23 @@ function show_content(){
 	document.getElementsByClassName("content")[0].style.display = "block";//显示网址导航部分
 	document.getElementsByClassName("album")[0].style.display = "none";//关掉相册部分
 }
+function round_mode_on(){
+	var list = document.getElementsByClassName("img")
+	for(i=0; i<list.length; i++){
+		list[i].style.borderRadius = "50%";//CSS中是border-radius，出现不同了
+	}
+	document.getElementsByClassName("round_mode_on_button")[0].style.display = "none";
+	document.getElementsByClassName("round_mode_off_button")[0].style.display = "inline";
+}
+function round_mode_off(){
+	var list = document.getElementsByClassName("img")
+	for(i=0; i<list.length; i++){
+		list[i].style.borderRadius = "20%";
+	}
+	document.getElementsByClassName("round_mode_on_button")[0].style.display = "inline";
+	document.getElementsByClassName("round_mode_off_button")[0].style.display = "none";
+}
+function search_tips_off(){
+	//该函数还没有实现，可能是因为getElementsByName不能读取input的name
+	document.getElementsByName("word")[0].style.list = "none";
+}
