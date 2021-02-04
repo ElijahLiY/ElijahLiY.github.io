@@ -82,9 +82,9 @@ ul li {
 }
 /*提示板*/
 .menu .tips{
-	font-size: 1.3em;
+/*	font-size: 1.3em;*/
 	text-align: left;
-	padding: 50px 0 50px 0;
+	padding: 50px 0 50px 0px;
 	display: none;
 	width: 400px;
 	height: 300px;
@@ -97,7 +97,8 @@ ul li {
 	margin: auto;	
 }
 .menu .tips ol{
-	margin: 0 30px 0 50px;
+	margin: 0 50px 0 80px;
+	padding: 0;
 }
 /*留言板*/
 .message_board{
