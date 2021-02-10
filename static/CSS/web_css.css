@@ -17,6 +17,9 @@ ul li {
 	text-decoration: none;
 	list-style-type: none;/*去掉小圆点*/
 }
+button{
+	cursor: pointer;
+}
 /*container设置*/
 .container {
 	position: relative;
@@ -24,7 +27,6 @@ ul li {
 	background: #c3c3c3;
 	margin: 0 auto; 
 }
-
 /*header设置*/
 .header{
 	padding-top: 30px;/*这是为了让菜单*/
@@ -195,6 +197,7 @@ ul li {
 #time{
 /*	border:1px dashed #000;*/
 	text-align: center;
+	background-image: url("../image/便签.png");
 	float: right;
 	width: 210px;
 	font-size: 120%;

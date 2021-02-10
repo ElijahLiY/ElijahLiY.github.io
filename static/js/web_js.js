@@ -1,15 +1,12 @@
 // JavaScript Document
 window.onload=function(){alert("Page OnLoad");}
-
 //$(window).load(function(){alert("hello");})
-
 function main(){
-//	alert("main函数已经执行");
 	show_time();
 	show_words();
 //	show_weather();
+	round_mode_on();
 }
-
 function show_time(){
 	var time = new Date(); //获得当前时间
     var year = time.getFullYear(); //获得年月日
@@ -130,7 +127,9 @@ function round_mode_on(){
 	var list = document.getElementsByClassName("img")
 	for(i=0; i<list.length; i++){
 		list[i].style.borderRadius = "50%";//CSS中是border-radius，出现不同了
-	}
+	}//把图片变成圆滚滚
+	document.getElementsByClassName("search_submit_button")[0].style.borderRadius = "50%";//百度搜索按钮
+	document.getElementsByClassName("search_submit_button")[1].style.borderRadius = "50%";//谷歌搜索按钮
 	document.getElementsByClassName("round_mode_on_button")[0].style.display = "none";
 	document.getElementsByClassName("round_mode_off_button")[0].style.display = "inline";
 }
@@ -139,6 +138,8 @@ function round_mode_off(){
 	for(i=0; i<list.length; i++){
 		list[i].style.borderRadius = "20%";
 	}
+	document.getElementsByClassName("search_submit_button")[0].style.borderRadius = "0";//百度搜索按钮
+	document.getElementsByClassName("search_submit_button")[1].style.borderRadius = "0";//谷歌搜索按钮
 	document.getElementsByClassName("round_mode_on_button")[0].style.display = "inline";
 	document.getElementsByClassName("round_mode_off_button")[0].style.display = "none";
 }
