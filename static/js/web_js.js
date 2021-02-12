@@ -5,7 +5,7 @@ function main(){
 	show_time();
 	show_words();
 //	show_weather();
-	round_mode_on();
+//	round_mode_on();
 }
 function show_time(){
 	var time = new Date(); //获得当前时间
