@@ -1,6 +1,4 @@
 // JavaScript Document
-window.onload=function(){alert("Page OnLoad");}
-//$(window).load(function(){alert("hello");})
 function main(){
 	show_time();
 	show_words();
@@ -23,7 +21,7 @@ function show_time(){
 	var count_down = 12 - date;
 	if(count_down<0){count_down+=31;}
      //设置form内容为当前时间
-     document.getElementById('time').innerHTML = year + "年" + month+1 + "月" + date + "日" + "<br />"+ hour + ":" + minute + ":" + second + "<br />"+"离春节还有" + "<strong>" +count_down+"</strong>"+"天";
+     document.getElementById('time').innerHTML = year + "年" + month+1 + "月" + date + "日" + "<br />"+ hour + ":" + minute + ":" + second + "<br />";
 	//1s后运行本身，达到重复运行的功效
 	setTimeout("show_time()", 1000);
 }
