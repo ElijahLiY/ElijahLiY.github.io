@@ -56,9 +56,7 @@ ul li {
 	display: inline;
 	line-height: 50px;
 	font-size: 2em;
-	padding-left: 65px;
-	padding-right: 65px;
-	padding-bottom: 0px;
+	padding: 9px 65px;
 }
 .menu li:hover{
 	background: #9ca5a2; 

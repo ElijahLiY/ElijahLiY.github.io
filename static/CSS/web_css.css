@@ -6,7 +6,7 @@ body {
 	padding: 0;
 	color: #000;	
 }
-a{
+a {
 	text-decoration-line: none;/*去掉下划线*/
 	color: #3f514d;/*改变颜色*/
 }
@@ -17,7 +17,7 @@ ul li {
 	text-decoration: none;
 	list-style-type: none;/*去掉小圆点*/
 }
-button{
+button {
 	cursor: pointer;
 }
 /*container设置*/
@@ -82,8 +82,8 @@ button{
 	margin: auto;	
 }
 /*提示板*/
-.menu .tips{
-/*	font-size: 1.3em;*/
+.menu .tips {
+  /*font-size: 1.3em;*/
 	text-align: left;
 	padding: 50px 0 50px 0px;
 	display: none;
@@ -102,10 +102,14 @@ button{
 	padding: 0;
 }
 .menu .tips ol .round_mode_off_button,
-.menu .tips ol .round_mode_on_button{display: inline;cursor: pointer;}
-.menu .tips ol .round_mode_off_button{display: none;}
+.menu .tips ol .round_mode_on_button{
+	display: inline;cursor: pointer;
+}
+.menu .tips ol .round_mode_off_button{
+	display: none;
+}
 /*留言板*/
-.message_board{
+.message_board {
 	display: none;
 	width: 400px;
 	height: 460px;

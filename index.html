@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 <title>Elijah网址导航3.0</title>
-<link href="static/CSS/web_css.css" rel="stylesheet" type="text/css" />
+<link href="static/CSS/web_css.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" type="img/x-icon" href="static/image/web_icos/favicon.ico"/>
 <script type="text/javascript" src="static/js/web_js.js"></script>
 <!--<script type="text/javascript" src="static/jquery-3.5.1.min.js"></script>-->
 </head>
@@ -39,7 +40,7 @@
 				</div>
 				<ol>
 					<li><strong>我会定期在提示中更新小用法和改动</strong></li>
-					<li>打开网页点一下tab键直接开始百度搜索</li>
+					<li>打开网页点一下tab键直接开始百度搜索，再按一下是谷歌搜索</li>
 					<li>如果日期没有显示可以按一下网页底部刷新JS按钮</li>
 					<li>鼠标放在网站图标上，1秒后会看到提示，如果某网站的密码记不住可以放在提示里</li>
 					<li>百度搜索会有一些提示，如果有需要自定义的语句可邮件告知
@@ -69,7 +70,7 @@
 	<!--网址导航正文-->
 	<div class="content"><!--网址导航正文-->
 		<!-- 励志语句 -->
-		<div id="lzwords"><p>总有一句感动你</p><!--每日一句-->
+		<div id="lzwords"><p>有一句感动你</p><!--每日一句-->
 		</div>
 		<!-- 时间刷新框 -->
 		<div id="time"><p>时间未刷新</p><!--显示时间-->
@@ -77,7 +78,7 @@
 		<!-- 百度谷歌搜索框 -->
 		<div class="search"><!--百度，谷歌搜索框-->
     		<form action="http://www.baidu.com/s" target="_blank" class="input_form">
-				<input list="input_tips" name="word" type="text"> 
+				<input tabindex="1" list="input_tips" name="word" type="text"> 
   				<button class="search_submit_button" type="submit">百度一下</button>
 				<datalist id="input_tips">
 					<option value="高效地工作"></option>
@@ -90,7 +91,7 @@
 				</datalist>
 			</form>
     		<form action="https://www.google.com/search" target="_blank" class="input_form">
-				<input name="q" type="text">
+				<input tabindex="2" name="q" type="text">
   				<button class="search_submit_button" type="submit">谷歌一下</button> 
 			</form>
     	</div>
@@ -113,7 +114,8 @@
 			<a title="这里才是真正的怀旧天堂" href="http://www.renren.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/web_icos/renren.jpg" /></a>		
 			<a title="在这里看看英雄联盟直播" href="https://www.douyu.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/web_icos/斗鱼.jpg" /></a>		
 			<a title="看看世界正在发生什么" href="https://www.sina.com.cn/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/web_icos/新浪.jpg" /></a>		
-			<a title="随时随地查看新鲜事" href="https://weibo.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/web_icos/新浪微博.jpg" /></a>		
+			<a title="随时随地查看新鲜事" href="https://weibo.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/web_icos/新浪微博.jpg" /></a>	
+			<a title="有什么电影值得一看" href="https://www.douban.com/" target="_blank"><img alt="慢点，图得等一会" class="img" src="static/image/web_icos/豆瓣.png" /></a>		
 		</div>
 		<!-- 我的网址收藏 -->
 		<div class="my_favorites"><!--我的网址导航-->
@@ -132,6 +134,9 @@
    	   		<a href="https://www.pythonanywhere.com/" target="_blank"><img alt="慢点，图得等一会" title="可以云部署python代码，不过目前注册不了" class="img" src="static/image/web_icos/pythonanywhere.png" /></a>
    	   		<a href="https://www.csdn.net/" target="_blank"><img alt="慢点，图得等一会" title="国内最大的程序员社区" class="img" src="static/image/web_icos/cnds.png" /></a>
    	   		<a href="https://www.python.org/" target="_blank"><img alt="慢点，图得等一会" title="python官网" class="img" src="static/image/web_icos/python.png" /></a>
+			<a href="https://www.iconfont.cn/" target="_blank"><img alt="慢点，图得等一会" title="这里可以找到免费的图标" class="img" src="static/image/web_icos/iconfont.png" /></a>
+			<a href="https://www.xuanfengge.com/funny/html5/element/" target="_blank"><img alt="慢点，图得等一会" title="html5每个元素的介绍都在这里" class="img" src="static/image/web_icos/html5.png" /></a>
+				  
 		</div>
 		<!-- 静静的网址收藏 -->
 		<div class="jingjing_favorites"><!--静静的网址导航-->
