@@ -1,7 +1,7 @@
 // JavaScript Document
 function main(){
 	show_time();
-	show_words();
+//	show_words();
 //	show_weather();
 //	round_mode_on();
 }
