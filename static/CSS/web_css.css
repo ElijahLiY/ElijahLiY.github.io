@@ -187,6 +187,7 @@ button {
 }
 /*search搜索栏和两个先挂件设置*/
 #lzwords{
+	display: none;
 /*	border:1px dashed #000;*/
 	text-align: center;
 	width: 210px;
@@ -198,6 +199,7 @@ button {
 /*	align-items: center;*/
 }
 #time{
+	display: none;
 /*	border:1px dashed #000;*/
 	text-align: center;
 	background-image: url("../image/便签.png");
