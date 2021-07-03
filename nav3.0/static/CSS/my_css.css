@@ -1,0 +1,97 @@
+/*页面预设置*/
+body {
+	font: 100%/1.4 cursive, Arial, Helvetica,italic, sans-serif;
+	background: #3f514d;
+	margin: 0;/*用户代理中margin为8*/
+	padding: 0;
+	color: #000;	
+}
+a{
+	text-decoration-line: none;/*去掉下划线*/
+	color: #3f514d;/*改变颜色*/
+}
+a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
+	border: none;
+}
+ul li {
+	text-decoration: none;
+	list-style-type: none;/*去掉小圆点*/
+}
+/*container设置*/
+.container {
+	position: relative;
+	width: 960px;
+	background: #c3c3c3;
+	margin: 0 auto; 
+}
+
+/*header设置*/
+.header{
+	padding-top: 30px;/*这是为了让菜单*/
+	height: 233px;
+	text-align: center;
+	background-color: rgba(109,126,123,0.5);
+/*	background-image: url("../image/header-img.jpg");*/
+	background-size:contain;
+	background-repeat: no-repeat;
+}
+.header .h1_img{
+	font-size: 1.4em;
+	color: #2b3e4f;
+	position: absolute;
+	top: 91px;
+	left: 20px;
+}
+.header .h1_img h1 {
+	display: inline;
+	margin-top: 0
+}
+.menu{
+	margin-top: 183px;
+	background-color: rgba(109,126,123,0.7);
+}
+.menu ul li{
+	cursor: pointer;
+	color: #151429;
+	display: inline;
+	line-height: 50px;
+	font-size: 2em;
+	padding: 9px 65px;
+}
+.menu li:hover{
+	background: #9ca5a2; 
+}
+.content{/*宽度自动填满*/
+/*	background: #9ED89C;*/
+	text-align: center;
+	height: 1000px;
+	padding-top: 30px;
+}
+.search{
+	text-align: center;
+	margin:auto;
+}
+.search .input_form{
+	margin-top: 30px;
+}
+.search input{
+	background: #efefef;
+	border-color: #c3c3c3;
+	line-height: 30px;
+	width: 350px;
+}
+.search button{
+	font-size: 120%;
+	line-height: 26px;/*这里不知道为什么input和button对不齐，所以只能修正line-height和padding*/
+	padding-bottom: 5px;
+}
+/*这是页脚*/
+.footer {
+	padding: 10px 0;
+	background: #abb1b1;
+	font-size:1em;
+	text-align:center;
+	font-family:Verdana, Geneva, sans-serif;
+	clear:both;/*防止高度坍塌造成页脚跑到浮动内容上面了*/
+	color:#eed;
+}
