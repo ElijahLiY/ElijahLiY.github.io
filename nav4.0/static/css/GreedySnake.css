@@ -1,0 +1,33 @@
+
+.gamebox{
+    width: 500px;
+    height: 500px;
+    background-color: aliceblue;
+    position: relative;
+    margin: auto;
+}
+.gamebox .snake{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border: solid grey 1px;
+}
+.gamebox .snake_head{
+    background-color: yellowgreen;
+}
+.gamebox .food{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border: solid white 1px;
+}
+.score{
+    margin: auto;
+    width: 120px;
+    height: 30px;
+    border: solid 2px royalblue;
+    text-align: center;
+    line-height: 30px;
+}

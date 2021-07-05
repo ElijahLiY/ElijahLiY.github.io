@@ -1,0 +1,451 @@
+/*页面预设置*/
+body {
+	font: 100%/1.4 "幼圆", "华文隶书", "Cooper Black" ,italic, sans-serif;
+	background: #3f514d;
+	margin: 0;/*用户代理中margin为8*/
+	padding: 0;
+	color: #000;
+	min-width: 1150px;	
+}
+a {
+	text-decoration-line: none;/*去掉下划线*/
+	color: #3f514d;/*改变颜色*/
+}
+a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
+	border: none;
+}
+ul li {
+	text-decoration: none;
+	list-style-type: none;/*去掉小圆点*/
+}
+input{
+    border: none;/*冲掉以前复杂的东西*/
+}
+button{cursor: pointer;}
+/*蒙版*/
+.mask{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.5);
+}
+/* 设置网页通用 */
+.clear{clear: both;}
+
+
+
+
+
+
+/*container设置*/
+.container {
+	position: relative;
+	background: #c3c3c3;
+	margin: 0 auto; 
+}
+/*header设置*/
+header{
+	height: 300px;
+	text-align: center;
+	background-color: rgba(109,126,123,0.5);
+	/* background-image: url("../images/header-img.jpg"); */
+	background-size:contain;
+	/* background-repeat: no-repeat; */
+    position: relative;
+}
+header .weather{
+	float: left;
+	margin: 10px 0 0px 30px;
+}
+header h1{
+	color: green;
+	clear: both;
+	font-size: 320%;
+	font-family: 'Courier New', Courier, monospace;
+	position:absolute;
+	top: 64px;
+	left: 30px;
+}
+header .menu{
+    position: absolute;
+    bottom: 0;
+    width: 100%;   
+}
+header .menu ul{
+	width: auto;
+	background-color: rgb(119 126 132 / 56%);/* 又一种颜色书写方式 */
+	margin: 0;
+}
+header .menu ul li{
+	cursor: pointer;
+	color: #FFFFFF;
+	display: inline;
+	line-height: 50px;
+	font-size: 2em;
+	padding: 9px 65px;
+
+}
+header .menu li:hover{
+	background: #9ca5a2; 
+}
+/*正在开发提示板*/
+header .menu .developing_board{
+	font-size: 1.5em;
+	padding: 50px 0 50px 0;
+	display: none;
+	width: 400px;
+	height: 300px;
+	background: #fbfbfb;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;	
+}
+
+.content{
+	margin: auto;
+	width: 900px;
+	min-height: 700px;
+}
+/*网址导航*/
+.nav{/*宽度自动填满*/
+	/* display: none; */
+/*	background: #9ED89C;*/
+	text-align: center;
+	height: 1000px;
+}
+/* 搜索部分 */
+.search{
+	text-align: center;
+	margin:auto;
+}
+.search .input_form{
+	margin-top: 30px;
+	position: relative;
+	height: 70px;
+}
+.search input{
+	color: rgb(58, 53, 53);
+	padding-left: 20px;
+	font-family: "黑体";
+	font-size: 130%;
+    border: rgb(222, 222, 222) 1px solid;
+    border-radius: 20px;
+	line-height: 40px;
+	width: 650px;
+    background-color: rgba(0,0,0,.0);
+	transition: all 0.3s linear;
+}
+.search input:hover{
+	border-color: rgb(255, 255, 255);
+	line-height: 42px;
+	margin-top: -2px;
+	width: 675px;
+}
+.search input:focus{outline: none;}
+.search .search_submit_button{
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+    border: none;
+	background: none;
+	position: absolute;
+	top: 2px;
+	left: 730px;
+	transition: all 0.3s linear;
+}
+.search .search_submit_button:hover{padding: 5px;}
+.search .search_submit_button img{width: 100%;}
+
+
+/* 导航部分 */
+.websites{
+	width: 800px;
+	height: 800px;
+	margin: 30px auto 0 auto;
+	/* background-color: beige; */
+}
+.websites .web_list .web_list_tit{
+	color: ghostwhite;
+	font-size: 130%;
+	text-align: left;
+	margin: 0;
+	margin-left: 50px;
+}
+.websites .web_list .white_line{
+	width: 100px;
+	height: 1px;
+	background-color: ghostwhite;
+	margin-left: 50px;
+}
+
+.websites .web_list .web_icons .web_icon{
+	height: 70px;
+	width: 70px;
+	margin: 24px 5px;
+	border-radius: 20%;
+	background-color: azure;
+	float: left;
+	box-shadow: 0px 0px 11px 2px #999;
+}
+
+.websites .web_list .web_icons .web_icon:first-child{
+	margin-left: 50px;
+}
+
+
+/* tools */
+/* .tools标题区 */
+.tools .tools_tits{
+	border-bottom: 2px solid #0000004f;
+	font-size: 0;/*为了消除空白折叠*/
+	padding: 0;
+}
+.tools .tools_tits li{
+	margin: 0;
+	font-size: 20px;
+    display: inline-block;
+    height: 58px;
+    line-height: 58px;
+    color: #595959;
+    padding: 0 15px;
+	border-bottom: 2px solid transparent;/*这里设置透明的边框是为了占据位置，防止hover时整个大小会变*/
+	margin-bottom: -2px;/*为了让li的边框和ul的边框重叠*/
+	cursor: pointer;
+}
+.tools .tools_tits li:hover{
+	/* outline: 2px solid #f43700; */
+	border-bottom: 2px solid #f43700;
+    color: #f43700;
+}
+/* 翻译区 */
+.tools .tools_content .translate{
+	padding-top: 30px;
+	color: #595959;
+}
+.tools .tools_content .translate .translate_box{
+	margin: auto;
+	height: 300px;
+	width: 800px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 11px 2px #999;
+	overflow: hidden;
+	position: relative;
+}
+.tools .tools_content .translate .translate_box .choose_lang{
+	border-bottom: 2px solid #0000004f;
+	margin: 0;
+}
+.tools .tools_content .translate .translate_box .choose_lang li{
+	margin: 0;
+	cursor: pointer;
+	font-size: 14px;
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    color: inherit;
+    padding: 0 15px;
+	border-bottom: 2px solid transparent;/*这里设置透明的边框是为了占据位置，防止hover时整个大小会变*/
+	margin-bottom: -2px;/*为了让li的边框和ul的边框重叠*/
+}
+.tools .tools_content .translate .translate_box .choose_lang li:hover{
+		/* outline: 2px solid #f43700; */
+		border-bottom: 2px solid #1800f4;
+		color: #1800f4;
+}
+.tools .tools_content .translate .translate_box .origin_txt,
+.tools .tools_content .translate .translate_box .translated_txt{
+	font-family: "黑体";
+	color: #444444;
+	font-size: 128%;
+	/* background-color: aliceblue; */
+	height: 79%;/*这里相对的是整个translate_box，上面还有兄弟元素choose_lang，所以填100%话总高度就会超出*/
+	width: 47%;/*按道理是一边一半，但是都设成50%却装不下*/
+	margin: 0;
+	background: transparent;
+	float: left;
+	overflow: hidden;
+	border: none;
+	padding: 10px;
+}
+.tools .tools_content .translate .translate_box .origin_txt{border-right: solid 2px gray;/*单设置个右边框，做成分割线*/}
+.tools .tools_content .translate .translate_box .origin_txt:focus,
+.tools .tools_content .translate .translate_box .translated_txt:focus{outline: none;}
+.tools .tools_content .translate .translate_box .copy_img{
+	position: absolute;
+	text-align: center;
+	padding: 10px;
+	width: 22px;
+	height: 22px;
+	bottom: 14px;
+	right: 26px;
+	border-radius: 50%;
+	transition: all 0.2s linear;
+	cursor: pointer;
+}
+.tools .tools_content .translate .translate_box .copy_img img{
+	width: 100%;/*想对于内容盒，也就是上面copy_img是多少它就是多少*/
+	height: 100%;
+}
+.tools .tools_content .translate .translate_box .copy_img:hover{background-color: darkgray;}
+
+/*文字识别区*/
+.tools .tools_content .text_rec{padding-top: 30px;color: #595959;}
+.tools .tools_content .text_rec .rec_box{
+	margin: auto;
+	height: 300px;
+	width: 800px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 11px 2px #999;
+	overflow: hidden;
+	position: relative;
+}
+
+.tools .tools_content .text_rec .rec_box .choose_file{
+	height: 38px;
+	border-bottom: 2px solid #0000004f;
+	padding: 0 0 0 40px;
+}
+/* .choose_file内部 */
+.choose_file input[type="file"]{
+	float: left;
+	height: 100%;
+    line-height: 100%;
+    color: #595959;
+	font-family: inherit;
+	font-size: 14px;
+	cursor: pointer;
+	padding: 7px 0 0 15px;
+}
+.choose_file input[type="file"]:focus{outline: none;}
+.choose_file .choose_file_radiobutton{
+	display: none;
+	/* 做成自动识别的，就不需要选择这个了 */
+	float: left;
+	height: 100%;
+	line-height: 100%;
+	color: inherit;
+}
+.choose_file input[type="Button"]{
+	height: 25px;
+	font-size: 14px;
+	cursor: pointer;
+	margin-top: 7px;
+	border: solid 1px #777;
+    border-radius: 2px;
+}
+.choose_file input[type="Button"]:focus{outline: none;}
+.tools .tools_content .text_rec .rec_box .rec_text{
+	font-family: "黑体";
+	color: #444444;
+	font-size: 128%;
+	height: 79%;/*这里相对的是整个translate_box，上面还有兄弟元素choose_lang，所以填100%话总高度就会超出*/
+	width: 97%;
+	margin: 0;
+	background: transparent;
+	overflow: hidden;
+	border: none;
+	padding: 10px;
+}
+.tools .tools_content .text_rec .rec_box .rec_text:focus{outline: none;}
+.tools .tools_content .text_rec .rec_box .copy_img{
+	position: absolute;
+	text-align: center;
+	padding: 10px;
+	width: 22px;
+	height: 22px;
+	bottom: 14px;
+	right: 26px;
+	border-radius: 50%;
+	transition: all 0.2s linear;
+	cursor: pointer;
+}
+.tools .tools_content .text_rec .rec_box .copy_img img{
+	width: 100%;/*想对于内容盒，也就是上面copy_img是多少它就是多少*/
+	height: 100%;
+}
+.tools .tools_content .text_rec .rec_box .copy_img:hover{background-color: darkgray;}
+/*相册photo album*/
+.album{
+	display: none;/*默认不显示*/
+	text-align: center;
+	height: 1000px;
+}
+
+/*留言板*/
+.message_board {
+	/* display: none; */
+	position: relative;
+	width: 400px;
+	height: 460px;
+	background: #fbfbfb;
+	margin: auto;
+}
+
+.close_button{/*用的都是相对位置，可以作为弹出框通用button，所以不加.message_board*/
+	text-align: center;
+	font-size: 0.7em;
+	cursor: pointer;
+	border:2px dashed #000;
+	width: 20px;
+	height: 20px;
+	border-color: #000000;
+	border-radius: 50%;/*通过设置圆角使矩形变圆形*/
+	position: absolute;
+	top: -12px;
+	left: 387px;
+	background-color: #fbfbfb; 
+}
+.message_board .message_board_tips{
+	font-size: 1.1em;
+	width: 300px;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+.message_board .input_board{
+	font-size: 1.1em;
+	display: block;
+	margin: auto;
+	width: 300px;
+	height: 280px;
+}
+.message_board .submit_button{
+	font-size: 1.2em;
+	margin: 7px 0 0 254px;
+	cursor: pointer;
+}
+.success_submit_board{
+	font-size: 1.5em;
+	padding: 35px 0 0 13px;
+	display: none;
+	width: 253px;
+	height: 66px;
+	background: #fbfbfb;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+
+/*这是页脚*/
+.footer {
+	padding: 10px 0;
+	background: #abb1b1;
+	font-size:1em;
+	text-align:center;
+	font-family:Verdana, Geneva, sans-serif;
+	clear:both;/*防止高度坍塌造成页脚跑到浮动内容上面了*/
+	color:#eed;
+}
+.former_vision li{
+	display: inline;
+}

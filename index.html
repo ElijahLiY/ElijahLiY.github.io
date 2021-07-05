@@ -1,30 +1,276 @@
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="GreedySnake.css">
-        <script src="GreedySnake.js"></script>
-    </head>
-    <body onload="main()">
-        <header>
-            <h1>GreedySnake</h1>
-        </header>
-        <div class="container">
-            <div class="gamebox">
-                <div class="food"></div>
 
-                <div class="snake snake_head"></div>
-                <div class="snake"></div>
-                <div class="snake"></div>
-                <div class="snake"></div>
-                <div class="snake"></div>
-                <div class="snake"></div>
-                <div class="snake"></div>
-                <div class="snake"></div>
-      
-                
-            </div>
-            <div class="score">
-            </div>
-        </div>
-    </body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>ElijahLi-Web 4.1</title>
+
+	<link href="static/css/ElijahLi-Web.css" rel="stylesheet" type="text/css">
+	<link href="static/css/GreedySnake.css" rel="stylesheet">
+
+	<link rel="shortcut icon" type="img/x-icon" href="static/favicon.ico" />
+
+	<script type="text/javascript" src="static\js\jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="static/js/ElijahLi-Web.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="mask">
+			<!--留言蒙版,放在menu之前是因为menu中的弹出层不能被蒙版覆盖-->
+		</div>
+		<!--头部-->
+		<header>
+			<div class="weather">
+				<span class="date" id="date">2021-5-3</span><br>
+				<img src="" alt="" class="weather_img">
+				<span class="temp">0℃~30℃</span>
+			</div>
+			<h1>Elijah's HomePage</h1>
+			<div class="menu">
+				<!--菜单栏-->
+				<ul>
+					<li class="nav_tit menu_li">网址导航</li>
+					<li class="tools_tit menu_li">工具</li>
+					<li class="album_tit menu_li">相册</li>
+					<li class="tips_tit menu_li">提示</li>
+					<li class="message_tit menu_li">留言</li>
+				</ul>
+				<div class="developing_board">
+					<!--正在开发提示板-->
+					<div class="close_button" onClick="kill_developing_board()">
+						<!--关闭符号-->
+					</div>
+					该功能正在开发，敬请期待...
+				</div>
+			</div>
+
+		</header>
+		<!--网址导航正文-->
+		<div class="content">
+			<div class="nav content_page">
+				<!--网址导航正文-->
+				<!-- 百度谷歌搜索框 -->
+				<div class="search">
+					<!--百度，谷歌搜索框-->
+					<form action="http://www.baidu.com/s" target="_blank" class="input_form">
+						<input tabindex="1" list="input_tips" name="word" type="text">
+						<button class="search_submit_button" type="submit">
+							<img src="static\images\网页部件\fangdajing.png" alt="">
+						</button>
+					</form>
+				</div>
+				<div class="websites">
+					<div class="web_list">
+						<h5 class="web_list_tit clear">访问最多</h5>
+						<div class="white_line"></div>
+						<div class="web_icons">
+							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+						</div>
+					</div>
+					<div class="web_list">
+						<h5 class="web_list_tit clear">通用</h5>
+						<div class="white_line"></div>
+						<div class="web_icons">
+							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+						</div>
+					</div>
+					<div class="web_list clear">
+						<h5 class="web_list_tit">计算机</h5>
+						<div class="white_line"></div>
+						<div class="web_icons">
+							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+						</div>
+					</div>
+					<div class="web_list clear">
+						<h5 class="web_list_tit">资源</h5>
+						<div class="white_line"></div>
+						<div class="web_icons">
+							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+						</div>
+					</div>
+					<div class="web_list clear">
+						<h5 class="web_list_tit">生物</h5>
+						<div class="white_line"></div>
+						<div class="web_icons">
+							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+						</div>
+					</div>
+					<div class="web_list clear">
+						<h5 class="web_list_tit">购物</h5>
+						<div class="white_line"></div>
+						<div class="web_icons">
+							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+							<div class="web_icon"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--网址导航页完-->
+
+			<!-- 工具 -->
+			<div class="tools content_page">
+				<ul class="tools_tits">
+					<li class="translate_tit tools_tits_li" onclick="displayTool('translate')">中英互译</li>
+					<li class="text_rec_tit tools_tits_li" onclick="displayTool('text_rec')">智能识字</li>
+					<li class="tools_tits_li">和弦查询</li>
+					<li class="tools_tits_li">和弦查询</li>
+					<li class="tools_tits_li">进制转换</li>
+					<li class="tools_tits_li">密码提示</li>
+				</ul>
+				<div class="tools_content">
+					<div class="translate">
+						<div class="translate_box">
+							<ul class="choose_lang">
+								<li>自动检测</li>
+								<li>中文</li>
+								<li>英文</li>
+							</ul>
+							<textarea class="origin_txt">请输入需要翻译的文字...</textarea>
+							<textarea class="translated_txt"></textarea>
+							<div class="copy_img">
+								<img src="static/images/网页部件/复制.png" alt="复制文本">
+							</div>
+						</div>
+					</div>
+					<div class="text_rec">
+						<div class="rec_box">
+							<div class="choose_file">
+								<input type="file" name="rec_ori_file" id="rec_ori_file">
+								<div class="choose_file_radiobutton">
+									<input type="radio" name="choose_file_type" id="pic" checked><label
+										for="pic">图片</label>
+									<input type="radio" name="choose_file_type" id="pdf"><label for="pdf">pdf</label>
+								</div>
+								<input type="Button" value="确定">
+							</div>
+							<textarea class="rec_text" id="rec_text">请选择需要识别的文档（支持打印体图片和PDF格式，中英文）...</textarea>
+							<div class="copy_img">
+								<img src="static/images/网页部件/复制.png" alt="复制文本">
+							</div>
+						</div>
+					</div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!--工具完-->
+
+			<!-- 相册页面 -->
+			<div class="album content_page">
+				<div class="photo_tips">
+					<!--正在开发提示板-->
+					点开也没用，都说了该功能正在开发，哼！...
+				</div>
+			</div>
+			<!--album完-->
+			<!-- 提示页面 -->
+			<div class="tips content_page">
+				<div class="container">
+					<div class="gamebox">
+						<div class="food"></div>
+
+						<div class="snake snake_head"></div>
+						<div class="snake"></div>
+						<div class="snake"></div>
+						<div class="snake"></div>
+						<div class="snake"></div>
+						<div class="snake"></div>
+						<div class="snake"></div>
+						<div class="snake"></div>
+
+					</div>
+					<div class="score">
+					</div>
+				</div>
+			</div>
+			<!--提示完-->
+			<!-- 留言页面 -->
+			<div class="message content_page">
+				<div class="message_board">
+					<!--留言框-->
+					<div class="message_board_tips">
+						<!--留言提示-->
+						如果有什么建议或意见，在这里填写并提交，或者发送邮件至liyingchun1993@163.com，谢谢!
+					</div>
+					<textarea class="input_board">请留言...
+				</textarea>
+					<button class="submit_button" onClick="submit_message_board()">提交</button>
+					<!--提交按钮-->
+				</div>
+				<div class="success_submit_board">
+					<!--提交成功提示框-->
+					提交成功！感谢！
+				</div>
+			</div>
+			<!--album完-->
+		</div>
+		<!-- content完 -->
+	</div>
+	<!--container完-->
+	<div class="footer">
+		<p>Copyright © 2021. All Rights Reserved.Designed by <a href="templates/Elijah个人网站.html"
+				target="_blank">Elijah</a></p>
+		<nl class="former_vision">
+			<li><a href="nav1.0/index.html" target="_blank">Elijah网址导航1.0</a></li>
+			<li><a href="nav2.0/index.html" target="_blank">Elijah网址导航2.0</a></li>
+		</nl>
+		<button onClick="main()">刷新JS效果</button>
+	</div>
+	<!--footer完-->
+</body>
+
 </html>
