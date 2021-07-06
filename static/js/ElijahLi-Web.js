@@ -1,30 +1,51 @@
 // JavaScript Document
-alert("i")
-$(document).ready(clickNavBtn);
-function clickNavBtn(){
-	$(".content_page").css("display", "none");
-	$(".nav").css("display", "block");
+
+
+
+$(document).ready(init_btn_bind);
+function init_btn_bind(){
+	$(".nav_tit").click(function(){
+		$(".content_page").css("display", "none");
+		$(".nav").css("display", "block");
+	})
+
+	$(".tools_tit").bind("click", function(){
+		$(".content_page").css("display", "none");
+		$(".tools").css("display", "block");
+	})
+	
+	$(".album_tit").bind("click", function(){
+		$(".content_page").css("display", "none");
+		$(".album").css("display", "block");
+	})
+	
+	$(".tips_tit").bind("click", function(){
+		$(".content_page").css("display", "none");
+		$(".tips").css("display", "block");
+	})
+	$(".translate_tit").bind("click", function(){
+		$(".tools_child_page").css("display", "none");
+		$(".translate").css("display", "block");
+	})
+	$(".text_rec_tit").bind("click", function(){
+		$(".tools_child_page").css("display", "none");
+		$(".text_rec").css("display", "block");
+	})
 }
 
-$(".nav_tit").bind("click", function(){
+$(document).ready(clickNavBtn);
+function clickNavBtn(){
+	// 默认显示
 	$(".content_page").css("display", "none");
-	$(".nav").css("display", "block");
-})
+	$(".games").css("display", "block");
+	// 绑定导航相关按钮
+		// 绑定tools页相关按钮
+	$(".tools_child_page").css("display", "none");
+	$(".translate").css("display", "block");	
+}
 
-$(".tools_tit").bind("click", function(){
-	$(".content_page").css("display", "none");
-	$(".tools").css("display", "block");
-})
 
-$(".album_tit").bind("click", function(){
-	$(".content_page").css("display", "none");
-	$(".album").css("display", "block");
-})
 
-$(".tips_tit").bind("click", function(){
-	$(".content_page").css("display", "none");
-	$(".tips").css("display", "block");
-})
 
 
 

@@ -37,9 +37,6 @@ button{cursor: pointer;}
 
 
 
-
-
-
 /*container设置*/
 .container {
 	position: relative;
@@ -91,27 +88,14 @@ header .menu ul li{
 header .menu li:hover{
 	background: #9ca5a2; 
 }
-/*正在开发提示板*/
-header .menu .developing_board{
-	font-size: 1.5em;
-	padding: 50px 0 50px 0;
-	display: none;
-	width: 400px;
-	height: 300px;
-	background: #fbfbfb;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;	
-}
+
 
 .content{
 	margin: auto;
 	width: 900px;
 	min-height: 700px;
 }
+
 /*网址导航*/
 .nav{/*宽度自动填满*/
 /*	background: #9ED89C;*/
@@ -369,7 +353,10 @@ header .menu .developing_board{
 	height: 100%;
 }
 .tools .tools_content .text_rec .rec_box .copy_img:hover{background-color: darkgray;}
-/*相册photo album*/
+
+
+
+/*相册*/
 .album{
 	display: none;/*默认不显示*/
 	text-align: center;

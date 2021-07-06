@@ -1,12 +1,16 @@
 console.log('开始执行JavaScript程序！')
 
-function main(){
+$(document).ready(function(){
+    $("#greedysnake_start").bind("click",snakeGameStart)
+});
 
-    var snake = document.getElementsByClassName('snake');
-    var food = document.getElementsByClassName('food')[0];
+function snakeGameStart(){
+
+    var snake = $('.snake');
+    var food = $('.food')[0];
     snake[0].speed = 375;
     var score = snake.length;
-    document.getElementsByClassName('score')[0].innerHTML = '得分为：' + score;
+    $('.score')[0].innerHTML = '得分为：' + score;
 
     // snake_head
     snake[0].drc_by_keybord = 0; // direction, 0 for right, 1 for up, 2 for left, 3 for down
@@ -175,14 +179,15 @@ function main(){
 
 function initGame(snake, food){
     // put the snake in right place
-    snake[0].style.top = 250;
-    snake[0].style.left = 250;
+    console.log(snake)
+    snake[0].style.top = "250px";
+    snake[0].style.left = "250px";
     for(i=0;i<snake.length-1;i++){
-        snake[i+1].style.left = parseInt(snake[i].style.left) - 10;
-        snake[i+1].style.top = parseInt(snake[i].style.top);
+        snake[i+1].style.left = (parseInt(snake[i].style.left) - 10)+"px";
+        snake[i+1].style.top = (parseInt(snake[i].style.top))+"px";
     }
     // put the food in random place
-    food.style.left = parseInt(Math.random()*50)*10
-    food.style.top = parseInt(Math.random()*50)*10
+    food.style.left = (parseInt(Math.random()*50)*10)+"px"
+    food.style.top = (parseInt(Math.random()*50)*10)+"px"
     console.log('init complete!')
 }
