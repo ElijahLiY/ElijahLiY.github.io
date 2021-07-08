@@ -1,22 +1,24 @@
-
 .greedySnake{
+    text-align: center;
+}
+.game_box{
     width: 500px;
     height: 500px;
     background-color: aliceblue;
     position: relative;
     margin: auto;
 }
-.greedySnake .snake{
+.game_box .snake{
     position: absolute;
     width: 8px;
     height: 8px;
     background-color: black;
     border: solid grey 1px;
 }
-.greedySnake .snake_head{
+.game_box .snake_head{
     background-color: yellowgreen;
 }
-.greedySnake .food{
+.game_box .food{
     position: absolute;
     width: 8px;
     height: 8px;

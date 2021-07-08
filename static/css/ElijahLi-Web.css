@@ -34,7 +34,10 @@ button{cursor: pointer;}
 }
 /* 设置网页通用 */
 .clear{clear: both;}
-
+.clear_fix::after{
+	content: '';
+	clear: both;
+}
 
 
 /*container设置*/
@@ -45,7 +48,7 @@ button{cursor: pointer;}
 }
 /*header设置*/
 header{
-	height: 300px;
+	height: 220px;
 	text-align: center;
 	background-color: rgba(109,126,123,0.5);
 	/* background-image: url("../images/header-img.jpg"); */
@@ -355,12 +358,28 @@ header .menu li:hover{
 .tools .tools_content .text_rec .rec_box .copy_img:hover{background-color: darkgray;}
 
 
-
-/*相册*/
-.album{
-	display: none;/*默认不显示*/
-	text-align: center;
-	height: 1000px;
+/* 游戏分页，搬运tools */
+.games .games_tits{
+	border-bottom: 2px solid #0000004f;
+	font-size: 0;/*为了消除空白折叠*/
+	padding: 0;
+}
+.games .games_tits li{
+	margin: 0;
+	font-size: 20px;
+    display: inline-block;
+    height: 58px;
+    line-height: 58px;
+    color: #595959;
+    padding: 0 15px;
+	border-bottom: 2px solid transparent;/*这里设置透明的边框是为了占据位置，防止hover时整个大小会变*/
+	margin-bottom: -2px;/*为了让li的边框和ul的边框重叠*/
+	cursor: pointer;
+}
+.games .games_tits li:hover{
+	/* outline: 2px solid #f43700; */
+	border-bottom: 2px solid #f43700;
+    color: #f43700;
 }
 
 /*留言板*/

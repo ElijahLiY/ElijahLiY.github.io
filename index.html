@@ -33,14 +33,13 @@
 				<ul>
 					<li class="nav_tit menu_li">网址导航</li>
 					<li class="tools_tit menu_li">工具</li>
-					<li class="album_tit menu_li">相册</li>
 					<li class="games_tit menu_li">游戏</li>
 					<li class="message_tit menu_li">留言</li>
 				</ul>
 			</div>
 		</header>
 
-		
+
 		<div class="content">
 
 			<!--网址导航正文-->
@@ -58,26 +57,10 @@
 				</div>
 				<div class="websites">
 					<div class="web_list">
-						<h5 class="web_list_tit clear">访问最多</h5>
-						<div class="white_line"></div>
-						<div class="web_icons">
-							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-						</div>
-					</div>
-					<div class="web_list">
 						<h5 class="web_list_tit clear">通用</h5>
 						<div class="white_line"></div>
 						<div class="web_icons">
 							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
-							<div class="web_icon"></div>
 							<div class="web_icon"></div>
 							<div class="web_icon"></div>
 							<div class="web_icon"></div>
@@ -119,21 +102,6 @@
 						</div>
 					</div>
 					<div class="web_list clear">
-						<h5 class="web_list_tit">生物</h5>
-						<div class="white_line"></div>
-						<div class="web_icons">
-							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-						</div>
-					</div>
-					<div class="web_list clear">
 						<h5 class="web_list_tit">购物</h5>
 						<div class="white_line"></div>
 						<div class="web_icons">
@@ -149,7 +117,8 @@
 						</div>
 					</div>
 				</div>
-			</div><!--网址导航页完-->
+			</div>
+			<!--网址导航页完-->
 
 
 			<!-- 工具 -->
@@ -202,24 +171,20 @@
 					<div></div>
 					<div></div>
 				</div>
-			</div><!--工具完-->
-
-
-			<!-- 相册 -->
-			<div class="album content_page">
-				<div class="photo_tips">
-					<!--正在开发提示板-->
-					点开也没用，都说了该功能正在开发，哼！...
-				</div>
-			</div><!--album完-->
-
+			</div>
+			<!--工具完-->
 
 			<!-- 游戏页面 -->
 			<div class="games content_page">
-				<div class="container">
-					<div class="greedySnake gamebox">
+				<!-- 游戏分页标题 -->
+				<ul class="games_tits">
+					<li class="greedy_snake_tit games_tits_li">贪吃蛇</li>
+					<li class="mine_tit games_tits_li">扫雷</li>
+				</ul>
+				<!-- 游戏分页 -->
+				<div class="games_child_page greedySnake">
+					<div class="game_box">
 						<div class="food"></div>
-
 						<div class="snake snake_head"></div>
 						<div class="snake"></div>
 						<div class="snake"></div>
@@ -228,14 +193,18 @@
 						<div class="snake"></div>
 						<div class="snake"></div>
 						<div class="snake"></div>
-
 					</div>
-					<div class="score">
-					</div>
+					<div class="score">得分为：0</div>
 					<button id="greedysnake_start">开始游戏</button>
 					<button>停止游戏</button>
+				
 				</div>
-			</div><!--游戏完-->
+				<div class="games_child_page mine">
+					<div class="game_box"></div>
+				</div>
+
+			</div>
+			<!--游戏完-->
 
 
 			<!-- 留言 -->
@@ -255,10 +224,12 @@
 					<!--提交成功提示框-->
 					提交成功！感谢！
 				</div>
-			</div><!--留言完-->
+			</div>
+			<!--留言完-->
 		</div><!-- content完 -->
 
-	</div><!--container完-->
+	</div>
+	<!--container完-->
 
 	<div class="footer">
 		<p>Copyright © 2021. All Rights Reserved.Designed by <a href="templates/Elijah个人网站.html"
@@ -266,9 +237,12 @@
 		<nl class="former_vision">
 			<li><a href="nav1.0/index.html" target="_blank">Elijah网址导航1.0</a></li>
 			<li><a href="nav2.0/index.html" target="_blank">Elijah网址导航2.0</a></li>
+			<li><a href="nav3.0/index.html" target="_blank">Elijah网址导航3.0</a></li>
+			<li><a href="nav4.0/index.html" target="_blank">Elijah网址导航4.0</a></li>
 		</nl>
 		<button onClick="main()">刷新JS效果</button>
-	</div><!--footer完-->
+	</div>
+	<!--footer完-->
 </body>
 
 </html>

@@ -4,6 +4,7 @@
 
 $(document).ready(init_btn_bind);
 function init_btn_bind(){
+	// 绑定主界面按钮事件s
 	$(".nav_tit").click(function(){
 		$(".content_page").css("display", "none");
 		$(".nav").css("display", "block");
@@ -14,15 +15,17 @@ function init_btn_bind(){
 		$(".tools").css("display", "block");
 	})
 	
-	$(".album_tit").bind("click", function(){
+	$(".games_tit").bind("click", function(){
 		$(".content_page").css("display", "none");
-		$(".album").css("display", "block");
+		$(".games").css("display", "block");
 	})
-	
-	$(".tips_tit").bind("click", function(){
+
+	$(".message_tit").bind("click", function(){
 		$(".content_page").css("display", "none");
-		$(".tips").css("display", "block");
+		$(".message").css("display", "block");
 	})
+
+	// 绑定子页面按钮事件
 	$(".translate_tit").bind("click", function(){
 		$(".tools_child_page").css("display", "none");
 		$(".translate").css("display", "block");
@@ -31,17 +34,28 @@ function init_btn_bind(){
 		$(".tools_child_page").css("display", "none");
 		$(".text_rec").css("display", "block");
 	})
+
+	$(".greedy_snake_tit").bind("click", function(){
+		$(".games_child_page").css("display", "none");
+		$(".greedySnake").css("display", "block");
+	})
+	$(".mine_tit").bind("click", function(){
+		$(".games_child_page").css("display", "none");
+		$(".mine").css("display", "block");
+	})
 }
 
-$(document).ready(clickNavBtn);
-function clickNavBtn(){
+$(document).ready(clickDefaulBtn);
+function clickDefaulBtn(){
 	// 默认显示
 	$(".content_page").css("display", "none");
 	$(".games").css("display", "block");
-	// 绑定导航相关按钮
-		// 绑定tools页相关按钮
+
 	$(".tools_child_page").css("display", "none");
 	$(".translate").css("display", "block");	
+
+	$(".games_child_page").css("display", "none");
+	$(".greedySnake").css("display", "block");
 }
 
 
