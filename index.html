@@ -15,7 +15,6 @@
 
 	<script type="text/javascript" src="static\js\jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="static/js/ElijahLi-Web.js"></script>
-	<script type="text/javascript" src="static\js\GreedySnake.js"></script>
 </head>
 
 <body>
@@ -174,6 +173,7 @@
 			</div>
 			<!--工具完-->
 
+			
 			<!-- 游戏页面 -->
 			<div class="games content_page">
 				<!-- 游戏分页标题 -->
@@ -183,21 +183,16 @@
 				</ul>
 				<!-- 游戏分页 -->
 				<div class="games_child_page greedySnake">
-					<div class="game_box">
-						<div class="food"></div>
-						<div class="snake snake_head"></div>
-						<div class="snake"></div>
-						<div class="snake"></div>
-						<div class="snake"></div>
-						<div class="snake"></div>
-						<div class="snake"></div>
-						<div class="snake"></div>
-						<div class="snake"></div>
+					<div class="game_box greedysnake_game_box">
+						<div class="snake_content">
+							<div class="btn startBtn"><button></button></div>
+							<div class="btn pauseBtn"><button></button></div>
+							<div id="snakeWrap"></div>
+						</div>
+
+						<script type="text/javascript" src="static\js\GreedySnake.js"></script>
+
 					</div>
-					<div class="score">得分为：0</div>
-					<button id="greedysnake_start">开始游戏</button>
-					<button>停止游戏</button>
-				
 				</div>
 				<div class="games_child_page mine">
 					<div class="game_box"></div>
@@ -236,11 +231,10 @@
 				target="_blank">Elijah</a></p>
 		<nl class="former_vision">
 			<li><a href="nav1.0/index.html" target="_blank">Elijah网址导航1.0</a></li>
-			<li><a href="nav2.0/index.html" target="_blank">Elijah网址导航2.0</a></li>
-			<li><a href="nav3.0/index.html" target="_blank">Elijah网址导航3.0</a></li>
-			<li><a href="nav4.0/index.html" target="_blank">Elijah网址导航4.0</a></li>
+			<li><a href="nav2.0/index.html" target="_blank">2.0</a></li>
+			<li><a href="nav3.0/index.html" target="_blank">3.0</a></li>
+			<li><a href="nav4.0/index.html" target="_blank">4.0</a></li>
 		</nl>
-		<button onClick="main()">刷新JS效果</button>
 	</div>
 	<!--footer完-->
 </body>
