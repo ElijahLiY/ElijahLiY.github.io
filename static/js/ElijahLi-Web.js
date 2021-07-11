@@ -41,7 +41,7 @@ function init_btn_bind(){
 	})
 	$(".mine_tit").bind("click", function(){
 		$(".games_child_page").css("display", "none");
-		$(".mine").css("display", "block");
+		$(".mine_page").css("display", "block");
 	})
 }
 
