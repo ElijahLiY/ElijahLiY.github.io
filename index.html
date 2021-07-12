@@ -59,16 +59,16 @@
 					<div class="web_list">
 						<h5 class="web_list_tit clear">通用</h5>
 						<div class="white_line"></div>
-						<div class="web_icons">
+						<div class="web_icons common_web">
 							<!-- 这里有个待讨论的点，导航图标到底是背景还是内容 -->
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
-							<div class="web_icon"></div>
+							<a class="web_icon"></a>
+							<a class="web_icon"></a>
+							<a class="web_icon"></a>
+							<a class="web_icon"></a>
+							<a class="web_icon"></a>
+							<a class="web_icon"></a>
+							<a class="web_icon"></a>
+							<a class="web_icon"></a>
 						</div>
 					</div>
 					<div class="web_list clear">
@@ -183,37 +183,37 @@
 					<li class="mine_tit games_tits_li">扫雷</li>
 				</ul>
 				<!-- 游戏分页 -->
-				<div class="games_child_page greedySnake">
-					<div class="game_box greedysnake_game_box">
-						<div class="snake_content">
-							<div class="btn startBtn"><button></button></div>
-							<div class="btn pauseBtn"><button></button></div>
-							<div id="snakeWrap"></div>
-						</div>
-
-						<script type="text/javascript" src="static\js\GreedySnake.js"></script>
-
-					</div>
-				</div>
-				<div class="games_child_page mine_page">
-					<div class="game_box">
-						<div id="mine">
-							<div class="level">
-								<button class="active">初级</button>
-								<button>中级</button>
-								<button>高级</button>
-								<button>重新开始</button>
+				<div class="game_content">
+					<div class="games_child_page greedySnake">
+						<div class="game_box greedysnake_game_box">
+							<div class="snake_content">
+								<div class="btn startBtn"><button></button></div>
+								<div class="btn pauseBtn"><button></button></div>
+								<div id="snakeWrap"></div>
 							</div>
-							<div class="gameBox">
-					
-							</div>
-							<div class="info">剩余雷数 : <span class="mineNum"></span></div>
+				
+							<script type="text/javascript" src="static\js\GreedySnake.js"></script>
+				
 						</div>
-						<script src="static/js/Mine.js"></script>
 					</div>
-				</div>
-
-			</div>
+					<div class="games_child_page mine">
+						<div class="game_box">
+							<div id="mine">
+								<div class="level">
+									<button class="active">初级</button>
+									<button>中级</button>
+									<button>高级</button>
+									<button>重新开始</button>
+								</div>
+								<div class="gameBox">
+				
+								</div>
+								<div class="info">剩余雷数 : <span class="mineNum"></span></div>
+							</div>
+							<script src="static/js/Mine.js"></script>
+						</div>
+					</div>
+				</div>	</div>
 			<!--游戏完-->
 
 

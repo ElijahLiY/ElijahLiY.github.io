@@ -1,64 +1,48 @@
 // JavaScript Document
 
-
-
-$(document).ready(init_btn_bind);
-function init_btn_bind(){
-	// 绑定主界面按钮事件s
-	$(".nav_tit").click(function(){
-		$(".content_page").css("display", "none");
-		$(".nav").css("display", "block");
+$(function () {// 绑定菜单标题标签切换功能
+	$(".menu_li").click(function () {//每个菜单标题上绑定一个函数
+		// var index = $(this).index();// 取得被点的元素的索引
+		$(".content_page").eq($(this).index()).show().siblings().hide();// 利用这个索引显示相应内容，隐藏其他
 	})
-
-	$(".tools_tit").bind("click", function(){
-		$(".content_page").css("display", "none");
-		$(".tools").css("display", "block");
+	$(".tools_tits_li").click(function(){
+		var tool_tit_index = $(this).index();
+		$(".tools_child_page").eq(tool_tit_index).show().siblings().hide();
 	})
-	
-	$(".games_tit").bind("click", function(){
-		$(".content_page").css("display", "none");
-		$(".games").css("display", "block");
+	$(".games_tits_li").click(function(){
+		var game_tit_index = $(this).index();
+		$(".games_child_page").eq(game_tit_index).show().siblings().hide();
 	})
+})
 
-	$(".message_tit").bind("click", function(){
-		$(".content_page").css("display", "none");
-		$(".message").css("display", "block");
-	})
+$(function () {// 默认显示
+	$(".nav").css("display", "block").siblings().css("display", "none");//主界面显示nav
+	$(".translate").css("display", "block").siblings().css("display", "none");// 工具界面显示trans
+	$(".greedysnake").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
+})
 
-	// 绑定子页面按钮事件
-	$(".translate_tit").bind("click", function(){
-		$(".tools_child_page").css("display", "none");
-		$(".translate").css("display", "block");
-	})
-	$(".text_rec_tit").bind("click", function(){
-		$(".tools_child_page").css("display", "none");
-		$(".text_rec").css("display", "block");
-	})
+var common_web_link = [
+	['百度', 'static/images/web_icos/百度.jpg', 'http://www.baidu.com'],
+	['bilibili', 'static/images/web_icos/bilibili.jpg', 'https://www.bilibili.com/'],
+	['知乎','static/images/web_icos/知乎.jpg','https://www.zhihu.com/'],
+	['','static/images/web_icos/腾讯课堂.jpg','https://ke.qq.com/']
+]
+var prg_web_link = [
+	['python官网', '../images/web_icos/python官网.jpg', 'http://python.com']
+]
+var src_web_link = [
+	['腾讯课堂']
+]
 
-	$(".greedy_snake_tit").bind("click", function(){
-		$(".games_child_page").css("display", "none");
-		$(".greedySnake").css("display", "block");
-	})
-	$(".mine_tit").bind("click", function(){
-		$(".games_child_page").css("display", "none");
-		$(".mine_page").css("display", "block");
-	})
-}
-
-$(document).ready(clickDefaulBtn);
-function clickDefaulBtn(){
-	// 默认显示
-	$(".content_page").css("display", "none");
-	$(".games").css("display", "block");
-
-	$(".tools_child_page").css("display", "none");
-	$(".translate").css("display", "block");	
-
-	$(".games_child_page").css("display", "none");
-	$(".greedySnake").css("display", "block");
-}
-
-
+// 将网站导航图标绑在div上
+$(function(){ // 尝试过利用隐式循环，但是隐式循环中老是不识别下标
+	for(var i=0;i<$('.common_web .web_icon').length;i++){// 通用网站
+		$('.common_web .web_icon').eq(i).css("backgroundImage",'url('+common_web_link[i][1]+')').attr({
+			"href":common_web_link[i][2],
+			"target":"_blank"
+		})
+	}
+})
 
 
 
