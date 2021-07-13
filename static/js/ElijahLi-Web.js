@@ -18,7 +18,7 @@ $(function () {// 绑定菜单标题标签切换功能
 $(function () {// 默认显示
 	$(".nav").css("display", "block").siblings().css("display", "none");//主界面显示nav
 	$(".translate").css("display", "block").siblings().css("display", "none");// 工具界面显示trans
-	$(".greedysnake").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
+	$(".greedySnake").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
 })
 
 // 将网站导航图标绑在div上
