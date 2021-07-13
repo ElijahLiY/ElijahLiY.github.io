@@ -27,33 +27,32 @@ var common_web_link = [
 	['bilibili', 'static/images/web_icos/bilibili.jpg', 'https://www.bilibili.com/'],
 	['知乎','static/images/web_icos/知乎.jpg','https://www.zhihu.com/'],
 	['','static/images/web_icos/腾讯课堂.jpg','https://ke.qq.com/'],
-	['xjtu','static/images/web_icos/xjtu.jpg'],
+	['xjtu','static/images/web_icos/xjtu.jpg','http://www.xjtu.edu.cn/'],
 	['中国工商银行','static/images/web_icos/中国工商银行.jpg',''],
-	['安居客','static/images/web_icos/安居客.jpg',''],
-	['百度地图','static/images/web_icos/百度地图.jpg',''],
-	['虫虫吉他','static/images/web_icos/虫虫吉他.jpg',''],
-	['斗鱼','static/images/web_icos/斗鱼.jpg',''],
-	['豆瓣','static/images/web_icos/豆瓣.jpg',''],
-	['去哪网','static/images/web_icos/去哪网.jpg','']
+	['安居客','static/images/web_icos/安居客.jpg','https://wuhan.anjuke.com/'],
+	['百度地图','static/images/web_icos/百度地图.jpg','https://map.baidu.com/'],
+	['虫虫吉他','static/images/web_icos/虫虫吉他.jpg','http://www.ccguitar.cn/'],
+	['斗鱼','static/images/web_icos/斗鱼.jpg','https://www.douyu.com/'],
+	['豆瓣','static/images/web_icos/豆瓣.jpg','https://www.douban.com/'],
+	['去哪网','static/images/web_icos/去哪网.jpg','https://www.qunar.com/']
 ]
 var prg_web_link = [
 	['python官网', 'static/images/web_icos/python官网.jpg', 'http://python.com'],
-	['CNDS','static/images/web_icos/CNDS.jpg'],
-	['github', 'static/images/web_icos/github.jpg'],
-	['html5','static/images/web_icos/html5.jpg'],
-	['jquery','static/images/web_icos/jquery.jpg'],
-	['pythonanywhere','static/images/web_icos/pythonanywhere.jpg'],
-	['青云', 'static/images/web_icos/青云.jpg'],
-	['JQuery','static/images/web_icos/JQuery.jpg',''],
+	['CNDS','static/images/web_icos/CNDS.jpg','https://www.csdn.net/'],
+	['github', 'static/images/web_icos/github.jpg','https://github.com/'],
+	['html5','static/images/web_icos/html5.jpg','https://www.xuanfengge.com/funny/html5/element/'],
+	['jquery','static/images/web_icos/jquery.jpg','https://www.jquery123.com/'],
+	['pythonanywhere','static/images/web_icos/pythonanywhere.jpg','https://www.pythonanywhere.com/'],
+	['青云', 'static/images/web_icos/青云.jpg','https://www.qingcloud.com/'],
 	['空白','static/images/web_icos/空白.jpg',''],
 	['空白','static/images/web_icos/空白.jpg',''],
 	['空白','static/images/web_icos/空白.jpg',''],
 
 ]
 var src_web_link = [
-	['TED','static/images/web_icos/TED.jpg',''],
-	['爱学术','static/images/web_icos/爱学术.jpg',''],
-	['慕课','static/images/web_icos/慕课.jpg',''],
+	['TED','static/images/web_icos/TED.jpg','https://www.ted.com/'],
+	['爱学术','static/images/web_icos/爱学术.jpg','https://www.ixueshu.com/'],
+	['慕课','static/images/web_icos/慕课.jpg','https://www.icourse163.org/'],
 	['空白','static/images/web_icos/空白.jpg',''],
 	['空白','static/images/web_icos/空白.jpg',''],
 	['空白','static/images/web_icos/空白.jpg',''],
@@ -67,8 +66,8 @@ var src_web_link = [
 	['空白','static/images/web_icos/空白.jpg',''],
 ]
 var shopping_web_link = [
-	['京东','static/images/web_icos/京东.jpg',''],
-	['淘宝','static/images/web_icos/淘宝.jpg',''],
+	['京东','static/images/web_icos/京东.jpg','https://www.jd.com/'],
+	['淘宝','static/images/web_icos/淘宝.jpg','https://www.taobao.com/'],
 	['凡客','static/images/web_icos/凡客.jpg',''],
 	['空白','static/images/web_icos/空白.jpg',''],
 	['空白','static/images/web_icos/空白.jpg',''],
@@ -106,7 +105,16 @@ $(function(){ // 尝试过利用隐式循环，但是隐式循环中老是不识
 	}
 })
 
-
+// 网址图标的悬停效果
+$(function(){
+	$(".web_icon").hover(function(){
+		console.log(111);
+		$(this).siblings().stop().fadeTo(100, 0.5);
+	}, function(){
+		// console.log(222);
+		$(this).siblings().stop().fadeTo(200, 1);
+	})
+})
 
 
 
