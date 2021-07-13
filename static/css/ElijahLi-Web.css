@@ -51,9 +51,9 @@ header{
 	height: 220px;
 	text-align: center;
 	background-color: rgba(109,126,123,0.5);
-	/* background-image: url("../images/header-img.jpg"); */
-	background-size:contain;
-	/* background-repeat: no-repeat; */
+	background-image: url("../images/网页部件/横幅.jpg");
+	background-size:cover;
+	background-repeat: no-repeat;
     position: relative;
 }
 header .weather{
@@ -151,9 +151,9 @@ header .menu li:hover{
 
 /* 导航部分 */
 .websites{
-	width: 800px;
+	width: 810px;
 	height: 800px;
-	margin: 30px auto 0 auto;
+	margin: 5px auto 0 auto;
 	/* background-color: beige; */
 }
 .websites .web_list .web_list_tit{
@@ -172,9 +172,9 @@ header .menu li:hover{
 
 .websites .web_list .web_icons .web_icon{
 	display: block;
-	height: 70px;
-	width: 70px;
-	margin: 24px 5px;
+	height: 75px;
+	width: 75px;
+	margin: 16px 5px;
 	border-radius: 20%;
 	background-color: azure;
 	float: left;

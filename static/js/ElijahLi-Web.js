@@ -1,5 +1,5 @@
 // JavaScript Document
-
+// 实现标签切换
 $(function () {// 绑定菜单标题标签切换功能
 	$(".menu_li").click(function () {//每个菜单标题上绑定一个函数
 		// var index = $(this).index();// 取得被点的元素的索引
@@ -21,24 +21,86 @@ $(function () {// 默认显示
 	$(".greedysnake").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
 })
 
+// 将网站导航图标绑在div上
 var common_web_link = [
 	['百度', 'static/images/web_icos/百度.jpg', 'http://www.baidu.com'],
 	['bilibili', 'static/images/web_icos/bilibili.jpg', 'https://www.bilibili.com/'],
 	['知乎','static/images/web_icos/知乎.jpg','https://www.zhihu.com/'],
-	['','static/images/web_icos/腾讯课堂.jpg','https://ke.qq.com/']
+	['','static/images/web_icos/腾讯课堂.jpg','https://ke.qq.com/'],
+	['xjtu','static/images/web_icos/xjtu.jpg'],
+	['中国工商银行','static/images/web_icos/中国工商银行.jpg',''],
+	['安居客','static/images/web_icos/安居客.jpg',''],
+	['百度地图','static/images/web_icos/百度地图.jpg',''],
+	['虫虫吉他','static/images/web_icos/虫虫吉他.jpg',''],
+	['斗鱼','static/images/web_icos/斗鱼.jpg',''],
+	['豆瓣','static/images/web_icos/豆瓣.jpg',''],
+	['去哪网','static/images/web_icos/去哪网.jpg','']
 ]
 var prg_web_link = [
-	['python官网', '../images/web_icos/python官网.jpg', 'http://python.com']
+	['python官网', 'static/images/web_icos/python官网.jpg', 'http://python.com'],
+	['CNDS','static/images/web_icos/CNDS.jpg'],
+	['github', 'static/images/web_icos/github.jpg'],
+	['html5','static/images/web_icos/html5.jpg'],
+	['jquery','static/images/web_icos/jquery.jpg'],
+	['pythonanywhere','static/images/web_icos/pythonanywhere.jpg'],
+	['青云', 'static/images/web_icos/青云.jpg'],
+	['JQuery','static/images/web_icos/JQuery.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+
 ]
 var src_web_link = [
-	['腾讯课堂']
+	['TED','static/images/web_icos/TED.jpg',''],
+	['爱学术','static/images/web_icos/爱学术.jpg',''],
+	['慕课','static/images/web_icos/慕课.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
 ]
+var shopping_web_link = [
+	['京东','static/images/web_icos/京东.jpg',''],
+	['淘宝','static/images/web_icos/淘宝.jpg',''],
+	['凡客','static/images/web_icos/凡客.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
+	['空白','static/images/web_icos/空白.jpg',''],
 
-// 将网站导航图标绑在div上
+]
 $(function(){ // 尝试过利用隐式循环，但是隐式循环中老是不识别下标
 	for(var i=0;i<$('.common_web .web_icon').length;i++){// 通用网站
 		$('.common_web .web_icon').eq(i).css("backgroundImage",'url('+common_web_link[i][1]+')').attr({
 			"href":common_web_link[i][2],
+			"target":"_blank"
+		})
+		$('.prg_web .web_icon').eq(i).css("backgroundImage",'url('+prg_web_link[i][1]+')').attr({
+			"href":prg_web_link[i][2],
+			"target":"_blank"
+		})
+		$('.src_web .web_icon').eq(i).css("backgroundImage",'url('+src_web_link[i][1]+')').attr({
+			"href":src_web_link[i][2],
+			"target":"_blank"
+		})
+		$('.shopping_web .web_icon').eq(i).css("backgroundImage",'url('+shopping_web_link[i][1]+')').attr({
+			"href":shopping_web_link[i][2],
 			"target":"_blank"
 		})
 	}
