@@ -2,22 +2,30 @@
 // 实现标签切换
 $(function () {// 绑定菜单标题标签切换功能
 	$(".menu_li").click(function () {//每个菜单标题上绑定一个函数
-		// var index = $(this).index();// 取得被点的元素的索引
-		$(".content_page").eq($(this).index()).show().siblings().hide();// 利用这个索引显示相应内容，隐藏其他
+		$(this).addClass('selected').siblings().removeClass('selected'); // 在标题上加上选中效果并移除别的标题上的选中效果（该效果已经在css中写好）
+		var index = $(this).index();// 取得被点的元素的索引
+		$(".content_page").eq(index).show().siblings().hide();// 利用这个索引显示相应内容，隐藏其他
 	})
 	$(".tools_tits_li").click(function(){
+		$(this).addClass('selected').siblings().removeClass('selected');
 		var tool_tit_index = $(this).index();
 		$(".tools_child_page").eq(tool_tit_index).show().siblings().hide();
 	})
 	$(".games_tits_li").click(function(){
+		$(this).addClass('selected').siblings().removeClass('selected');
 		var game_tit_index = $(this).index();
 		$(".games_child_page").eq(game_tit_index).show().siblings().hide();
 	})
 })
 
 $(function () {// 默认显示
+	$(".nav_tit").addClass('selected')//主界面标题默认选中效果
 	$(".nav").css("display", "block").siblings().css("display", "none");//主界面显示nav
+
+	$(".translate_tit").addClass('selected');
 	$(".translate").css("display", "block").siblings().css("display", "none");// 工具界面显示trans
+
+	$(".greedy_snake_tit").addClass('selected');
 	$(".greedySnake").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
 })
 
@@ -38,7 +46,7 @@ var common_web_link = [
 ]
 var prg_web_link = [
 	['python官网', 'static/images/web_icos/python官网.jpg', 'http://python.com'],
-	['CNDS','static/images/web_icos/CNDS.jpg','https://www.csdn.net/'],
+	['CSDN','static/images/web_icos/CSDN.jpg','https://www.csdn.net/'],
 	['github', 'static/images/web_icos/github.jpg','https://github.com/'],
 	['html5','static/images/web_icos/html5.jpg','https://www.xuanfengge.com/funny/html5/element/'],
 	['jquery','static/images/web_icos/jquery.jpg','https://www.jquery123.com/'],

@@ -88,10 +88,13 @@ header .menu ul li{
 	padding: 9px 65px;
 
 }
-header .menu li:hover{
+header .menu li :hover{
 	background: #9ca5a2; 
 }
-
+header .menu ul .selected{
+	/* 规定选中后是什么样式，配合js */
+	background: #9ca5a2; 
+}
 
 .content{
 	margin: auto;
@@ -208,6 +211,11 @@ header .menu li:hover{
 	cursor: pointer;
 }
 .tools .tools_tits li:hover{
+	/* outline: 2px solid #f43700; */
+	border-bottom: 2px solid #f43700;
+    color: #f43700;
+}
+.tools .tools_tits .selected{
 	/* outline: 2px solid #f43700; */
 	border-bottom: 2px solid #f43700;
     color: #f43700;
@@ -380,6 +388,11 @@ header .menu li:hover{
 	cursor: pointer;
 }
 .games .games_tits li:hover{
+	/* outline: 2px solid #f43700; */
+	border-bottom: 2px solid #f43700;
+    color: #f43700;
+}
+.games .games_tits .selected{
 	/* outline: 2px solid #f43700; */
 	border-bottom: 2px solid #f43700;
     color: #f43700;
