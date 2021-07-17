@@ -52,7 +52,7 @@ var prg_web_link = [
 	['jquery','static/images/web_icos/jquery.jpg','https://www.jquery123.com/'],
 	['pythonanywhere','static/images/web_icos/pythonanywhere.jpg','https://www.pythonanywhere.com/'],
 	['青云', 'static/images/web_icos/青云.jpg','https://www.qingcloud.com/'],
-	['空白','static/images/web_icos/空白.jpg',''],
+	['npm','static/images/web_icos/npm.jpg','https://www.npmjs.cn/'],
 	['空白','static/images/web_icos/空白.jpg',''],
 	['空白','static/images/web_icos/空白.jpg',''],
 
@@ -116,76 +116,36 @@ $(function(){ // 尝试过利用隐式循环，但是隐式循环中老是不识
 // 网址图标的悬停效果
 $(function(){
 	$(".web_icon").hover(function(){
-		console.log(111);
-		$(this).siblings().stop().fadeTo(100, 0.5);
+		$(this).siblings().stop().fadeTo(100, 0.5);// 兄弟元素变暗
 	}, function(){
-		// console.log(222);
-		$(this).siblings().stop().fadeTo(200, 1);
+		$(this).siblings().stop().fadeTo(200, 1);//兄弟元素变回来
 	})
+})
+
+// 显示时间
+$(function showTime(){
+	var time = new Date(); //获得当前时间
+	var year = time.getFullYear(); //获得年月日
+	var month = time.getMonth(); //获得年月日
+	var date = time.getDate(); //获得年月日
+	var hour = time.getHours(); //获得小时、分钟、秒
+	var minute = time.getMinutes();
+	var second = time.getSeconds();
+	if (minute < 10){ //如果分钟只有1位，补0显示
+		minute = "0" + minute;
+	}else{;}
+	if (second < 10){ //如果秒数只有1位，补0显示
+		second = "0" + second;
+	}else{;}
+	
+	$(".date").text(year + "年" + month + "月" + date + "日"+ "</br>"+ hour + ":" + minute + ":" + second);
+	setTimeout(showTime, 1000);
 })
 
 
 
-// function main() {
-// 	// show_time();
-// 	show_content('nav');
-// 	//	show_weather();
-// 	//	round_mode_on();
-// }
-// function show_time() {
-// 	var time = new Date(); //获得当前时间
-// 	var year = time.getFullYear(); //获得年月日
-// 	var month = time.getMonth(); //获得年月日
-// 	var date = time.getDate(); //获得年月日
-// 	var hour = time.getHours(); //获得小时、分钟、秒
-// 	var minute = time.getMinutes();
-// 	var second = time.getSeconds();
-// 	if (minute < 10) //如果分钟只有1位，补0显示
-// 		minute = "0" + minute;
-// 	if (second < 10) //如果秒数只有1位，补0显示
-// 		second = "0" + second;
-// 	//计算过年倒计时
-// 	var count_down = 12 - date;
-// 	if (count_down < 0) { count_down += 31; }
-// 	//设置form内容为当前时间
-// 	document.getElementById('date').innerHTML = year + "年" + month + 1 + "月" + date + "日";
-// 	// document.getElementById('date').innerHTML = year + "年" + month+1 + "月" + date + "日" + "<br />"+ hour + ":" + minute + ":" + second + "<br />";
-// 	//1s后运行本身，达到重复运行的功效
-// 	setTimeout("show_time()", 1000);
-// }
-// // 导航菜单按钮
-// function show_content(menu_button) {
-// 	//所有的都关掉
-// 	document.getElementsByClassName("nav")[0].style.display = "none";//关掉网址导航部分
-// 	document.getElementsByClassName("tools")[0].style.display = "none";//关掉工具部分
-// 	document.getElementsByClassName("album")[0].style.display = "none";//关掉相册部分
-// 	document.getElementsByClassName("message")[0].style.display = "none";//关掉留言部分
-// 	for (i = 0; i < document.getElementsByClassName("menu_li").length; i++) {
-// 		document.getElementsByClassName("menu_li")[i].style.background = "none";//标题背景变化
-// 	}
-// 	//打开需要打开的部分
-// 	document.getElementsByClassName(menu_button)[0].style.display = "block";//打开相应部分
-// 	document.getElementsByClassName(menu_button + "_tit")[0].style.backgroundColor = "gray";//标题背景变化
-// }
-// // 工具中的菜单按钮
-// function displayTool(tools_button){
-// 	//所有都关掉
-// 	document.getElementsByClassName("translate")[0].style.display = "none";
-// 	document.getElementsByClassName("text_rec")[0].style.display = "none";
-// 	// document.getElementsByClassName("translate")[0].style.display = "none";
-// 	// document.getElementsByClassName("translate")[0].style.display = "none";
-// 	for (i = 0; i < document.getElementsByClassName("tools_tits_li").length; i++) {
-// 		document.getElementsByClassName("tools_tits_li")[i].style.borderBottom = "2px solid transparent";//标题下划线变化
-// 		document.getElementsByClassName("tools_tits_li")[i].style.color = "#595959";//标题颜色变化
-// 	}
-// 	document.getElementsByClassName(tools_button)[0].style.display = "block";//打开相应部分
-// 	document.getElementsByClassName(tools_button + "_tit")[0].style.borderBottom = "2px solid #f43700";//标题背景变化
-// 	document.getElementsByClassName(tools_button + "_tit")[0].style.color = "#f43700";//标题背景变化
-// }
-
-
-
-
+var request = request("www.baidu.com");
+console.log(request)
 
 
 
