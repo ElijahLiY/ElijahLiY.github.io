@@ -22,10 +22,10 @@ $(function () {// 默认显示
 	$(".nav_tit").addClass('selected')//主界面标题默认选中效果
 	$(".nav").css("display", "block").siblings().css("display", "none");//主界面显示nav
 
-	$(".translate_tit").addClass('selected');
+	$(".tools_tits_li:first-child").addClass('selected');
 	$(".translate").css("display", "block").siblings().css("display", "none");// 工具界面显示trans
 
-	$(".greedy_snake_tit").addClass('selected');
+	$(".games_tits_li:first-child").addClass('selected');
 	$(".greedySnake").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
 })
 
@@ -143,9 +143,6 @@ $(function showTime(){
 })
 
 
-
-var request = request("www.baidu.com");
-console.log(request)
 
 
 

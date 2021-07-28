@@ -86,14 +86,21 @@ header .menu ul li{
 	line-height: 50px;
 	font-size: 2em;
 	padding: 9px 65px;
-
+	border-right: solid rgb(0 0 0 / 0%) 2px;/* 这里占一个边框的大小但是不显示出来 */
 }
 header .menu li:hover{
-	background: #9ca5a2; 
+	background: #999999;
+    border-radius: 15px 15px 0px 0px; 
+	border-right: solid #505050 2px;
+	box-sizing: border-box;
+
 }
 header .menu ul .selected{
-	/* 规定选中后是什么样式，配合js */
-	background: #9ca5a2; 
+	background: #c3c3c3;
+    border-radius: 15px 15px 0px 0px;
+	border-right: solid #505050 2px;
+	box-sizing: border-box;
+	transition: linear 0.3s; 
 }
 
 .content{
