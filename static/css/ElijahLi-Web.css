@@ -171,13 +171,11 @@ header .menu ul .selected{
 	font-size: 130%;
 	text-align: left;
 	margin: 0;
-	margin-left: 50px;
 }
 .websites .web_list .white_line{
 	width: 100px;
 	height: 1px;
 	background-color: ghostwhite;
-	margin-left: 50px;
 }
 
 .websites .web_list .web_icons .web_icon{
@@ -193,9 +191,6 @@ header .menu ul .selected{
 	cursor: pointer;
 }
 
-.websites .web_list .web_icons .web_icon:first-child{
-	margin-left: 50px;
-}
 
 
 /* tools */

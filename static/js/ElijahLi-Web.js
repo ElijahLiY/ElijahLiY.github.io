@@ -43,6 +43,10 @@ var common_web_link = [
 	['斗鱼','static/images/web_icos/斗鱼.jpg','https://www.douyu.com/'],
 	['豆瓣','static/images/web_icos/豆瓣.jpg','https://www.douban.com/'],
 	['去哪网','static/images/web_icos/去哪网.jpg','https://www.qunar.com/']
+	['谷歌翻译','static/images/web_icos/谷歌翻译.jpg','https://translate.google.cn/']
+	// ['','static/images/web_icos/.jpg','https://www..com/']
+	// ['','static/images/web_icos/.jpg','https://www..com/']
+	// ['','static/images/web_icos/.jpg','https://www..com/']
 ]
 var prg_web_link = [
 	['python官网', 'static/images/web_icos/python官网.jpg', 'http://python.com'],
@@ -148,67 +152,3 @@ $(function showTime(){
 
 
 
-
-// function show_weather() {
-// 	alert("weather")
-// }
-// function show_message_board() {
-// 	document.getElementsByClassName("message_board")[0].style.display = "block";//显示留言板
-// 	document.getElementsByClassName("mask")[0].style.display = "block";//显示灰色蒙版
-// }
-// function kill_message_board() {
-// 	document.getElementsByClassName("message_board")[0].style.display = "none";//关掉留言板
-// 	document.getElementsByClassName("mask")[0].style.display = "none";//关掉灰色蒙版
-// }
-// function submit_message_board() {
-// 	document.getElementsByClassName("success_submit_board")[0].style.display = "block";//显示提交成功字样
-// 	setTimeout("kill_success_submit_board()", 1000);//一秒后调用关掉字样函数
-// }
-// function kill_success_submit_board() {
-// 	document.getElementsByClassName("success_submit_board")[0].style.display = "none";//关掉提交成功字样
-// }
-// function show_developing_board() {
-// 	document.getElementsByClassName("developing_board")[0].style.display = "block";//显示正在开发提示板
-// 	document.getElementsByClassName("mask")[0].style.display = "block";//显示灰色蒙版
-// }
-// function kill_developing_board() {
-// 	document.getElementsByClassName("developing_board")[0].style.display = "none";//关掉正在开发提示版
-// 	document.getElementsByClassName("mask")[0].style.display = "none";//关掉灰色蒙版
-// }
-// function show_tips() {
-// 	document.getElementsByClassName("mask")[0].style.display = "block";//显示灰色蒙版
-// 	document.getElementsByClassName("tips")[0].style.display = "block";//显示提示板
-// }
-// function kill_tips() {
-// 	document.getElementsByClassName("mask")[0].style.display = "none";//关掉灰色蒙版
-// 	document.getElementsByClassName("tips")[0].style.display = "none";//关掉正在开发提示版
-// }
-// function show_photo_album() {
-// 	document.getElementsByClassName("content")[0].style.display = "none";//关掉网址导航部分
-// 	document.getElementsByClassName("album")[0].style.display = "block";//显示相册部分
-// }
-
-// function round_mode_on() {
-// 	var list = document.getElementsByClassName("img")
-// 	for (i = 0; i < list.length; i++) {
-// 		list[i].style.borderRadius = "50%";//CSS中是border-radius，出现不同了
-// 	}//把图片变成圆滚滚
-// 	document.getElementsByClassName("search_submit_button")[0].style.borderRadius = "50%";//百度搜索按钮
-// 	document.getElementsByClassName("search_submit_button")[1].style.borderRadius = "50%";//谷歌搜索按钮
-// 	document.getElementsByClassName("round_mode_on_button")[0].style.display = "none";
-// 	document.getElementsByClassName("round_mode_off_button")[0].style.display = "inline";
-// }
-// function round_mode_off() {
-// 	var list = document.getElementsByClassName("img")
-// 	for (i = 0; i < list.length; i++) {
-// 		list[i].style.borderRadius = "20%";
-// 	}
-// 	document.getElementsByClassName("search_submit_button")[0].style.borderRadius = "0";//百度搜索按钮
-// 	document.getElementsByClassName("search_submit_button")[1].style.borderRadius = "0";//谷歌搜索按钮
-// 	document.getElementsByClassName("round_mode_on_button")[0].style.display = "inline";
-// 	document.getElementsByClassName("round_mode_off_button")[0].style.display = "none";
-// }
-// function search_tips_off() {
-// 	//该函数还没有实现，可能是因为getElementsByName不能读取input的name
-// 	document.getElementsByName("word")[0].style.list = "none";
-// }
