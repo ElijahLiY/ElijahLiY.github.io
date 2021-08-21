@@ -31,6 +31,7 @@ $(function () {// 默认显示
 
 // 将网站导航图标绑在div上
 var common_web_link = [
+	['网易公开课', 'static/images/web_icos/网易公开课.jpg', 'https://open.163.com/'],
 	['百度', 'static/images/web_icos/百度.jpg', 'http://www.baidu.com'],
 	['bilibili', 'static/images/web_icos/bilibili.jpg', 'https://www.bilibili.com/'],
 	['知乎','static/images/web_icos/知乎.jpg','https://www.zhihu.com/'],
