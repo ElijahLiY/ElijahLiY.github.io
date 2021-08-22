@@ -177,27 +177,27 @@ blocks = { // 储存方块形状
     ],
     "L": [
         [
-            [1, 0, 0, 0],
-            [1, 1, 1, 0],
-            [0, 0, 0, 0],
-            [0, 0, 0, 0]
-        ],
-        [
+            [0, 1, 0, 0],
+            [0, 1, 0, 0],
             [0, 1, 1, 0],
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
             [0, 0, 0, 0]
         ],
         [
             [0, 0, 0, 0],
             [1, 1, 1, 0],
-            [0, 0, 1, 0],
+            [1, 0, 0, 0],
             [0, 0, 0, 0]
         ],
         [
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
             [1, 1, 0, 0],
+            [0, 1, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 0, 0]
+        ],
+        [
+            [0, 0, 1, 0],
+            [1, 1, 1, 0],
+            [0, 0, 0, 0],
             [0, 0, 0, 0]
         ]
     ]
@@ -209,6 +209,7 @@ block_types_matrx = ['T', 'L', 'J', 'S', 'Z', 'O', 'I']//用于随机生成
 
 function Block(block_type) {
     this.block_type = block_type;// 传入类型
+    this.next_type = game.randomType()
     this.speed = 400;
     this.init();
 }
@@ -393,7 +394,9 @@ Game.prototype.timer = function () {
         } else {
             // console.log("到底了，新的来了")
             game.update_matrx();
-            block = new Block(game.randomType())
+            block = new Block(block.next_type);
+            block.next_type = game.randomType();//取得下一个类型
+            $("#block .next_block p").text(block.next_type);//显示下一个
         }
     }, block.speed)
 }

@@ -39,8 +39,9 @@ button{cursor: pointer;}
 /* 设置网页通用 */
 .clear{clear: both;}
 .clear_fix::after{
-	content: '';
+	content: ' ';
 	clear: both;
+	display: block;
 }
 
 /*header设置*/
