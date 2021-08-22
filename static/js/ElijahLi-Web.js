@@ -19,14 +19,14 @@ $(function () {// 绑定菜单标题标签切换功能
 })
 
 $(function () {// 默认显示
-	$(".nav_tit").addClass('selected')//主界面标题默认选中效果
-	$(".nav").css("display", "block").siblings().css("display", "none");//主界面显示nav
+	$(".games_tit").addClass('selected')//主界面标题默认选中效果
+	$(".games").css("display", "block").siblings().css("display", "none");//主界面显示nav
 
 	$(".tools_tits_li:first-child").addClass('selected');
 	$(".translate").css("display", "block").siblings().css("display", "none");// 工具界面显示trans
 
-	$(".games_tits_li:first-child").addClass('selected');
-	$(".greedySnake").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
+	$(".block_tit").addClass('selected');
+	$(".block").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
 })
 
 // 将网站导航图标绑在div上
@@ -43,7 +43,7 @@ var common_web_link = [
 	['虫虫吉他','static/images/web_icos/虫虫吉他.jpg','http://www.ccguitar.cn/'],
 	['斗鱼','static/images/web_icos/斗鱼.jpg','https://www.douyu.com/'],
 	['豆瓣','static/images/web_icos/豆瓣.jpg','https://www.douban.com/'],
-	['去哪网','static/images/web_icos/去哪网.jpg','https://www.qunar.com/']
+	['去哪网','static/images/web_icos/去哪网.jpg','https://www.qunar.com/'],
 	['谷歌翻译','static/images/web_icos/谷歌翻译.jpg','https://translate.google.cn/']
 	// ['','static/images/web_icos/.jpg','https://www..com/']
 	// ['','static/images/web_icos/.jpg','https://www..com/']
@@ -58,8 +58,14 @@ var prg_web_link = [
 	['pythonanywhere','static/images/web_icos/pythonanywhere.jpg','https://www.pythonanywhere.com/'],
 	['青云', 'static/images/web_icos/青云.jpg','https://www.qingcloud.com/'],
 	['npm','static/images/web_icos/npm.jpg','https://www.npmjs.cn/'],
-	['空白','static/images/web_icos/空白.jpg',''],
-	['空白','static/images/web_icos/空白.jpg',''],
+	['npm','static/images/web_icos/npm.jpg','https://www.npmjs.cn/'],
+	['npm','static/images/web_icos/npm.jpg','https://www.npmjs.cn/'],
+	['npm','static/images/web_icos/npm.jpg','https://www.npmjs.cn/'],
+	['npm','static/images/web_icos/npm.jpg','https://www.npmjs.cn/'],
+	['npm','static/images/web_icos/npm.jpg','https://www.npmjs.cn/'],
+	['npm','static/images/web_icos/npm.jpg','https://www.npmjs.cn/']
+
+	// ['空白','static/images/web_icos/空白.jpg','http://python.com'],
 
 ]
 var src_web_link = [

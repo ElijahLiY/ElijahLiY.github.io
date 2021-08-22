@@ -1,11 +1,15 @@
 /*页面预设置*/
+@import "GreedySnake.css";
+@import "Mine.css";
+@import "Block.css";
+
 body {
 	font: 100%/1.4 "幼圆", "华文隶书", "Cooper Black" ,italic, sans-serif;
-	background: #3f514d;
+	background: rgb(195,195,195);
 	margin: 0;/*用户代理中margin为8*/
 	padding: 0;
 	color: #000;
-	min-width: 1150px;	
+	min-width: 1000px;	
 }
 a {
 	text-decoration-line: none;/*去掉下划线*/
@@ -39,13 +43,6 @@ button{cursor: pointer;}
 	clear: both;
 }
 
-
-/*container设置*/
-.container {
-	position: relative;
-	background: #c3c3c3;
-	margin: 0 auto; 
-}
 /*header设置*/
 header{
 	height: 220px;
@@ -399,6 +396,7 @@ header .menu ul .selected{
 	border-bottom: 2px solid #f43700;
     color: #f43700;
 }
+
 
 /*留言板*/
 .message_board {

@@ -1,0 +1,42 @@
+#block table{
+    border-collapse: collapse;
+}
+#block{
+    border: black solid 2px;
+    height: 500px;
+}
+
+#block table{
+    width: 300px;
+    height: 500px;
+    border: solid 1px red;
+    margin: 20px auto;
+}
+
+#block td{
+    width: 25px;
+    height: 25px;
+    border: saddlebrown solid 1px;
+}
+
+#block .T{
+    background-color: red;
+}
+#block .L{
+    background-color: blue;
+}
+#block .J{
+    background-color: yellow;
+}
+#block .O{
+    background-color: chocolate;
+}
+#block .Z{
+    background-color: orange;
+}
+#block .S{
+    background-color: green;
+}
+#block .I{
+    background-color: pink;
+}
