@@ -163,15 +163,15 @@ blocks = { // 储存方块形状
             [0, 0, 0, 0]
         ],
         [
-            [1, 1, 0, 0],
+            [0, 1, 1, 0],
             [0, 1, 0, 0],
             [0, 1, 0, 0],
             [0, 0, 0, 0]
         ],
         [
-            [0, 0, 1, 0],
-            [1, 1, 1, 0],
             [0, 0, 0, 0],
+            [1, 1, 1, 0],
+            [0, 0, 1, 0],
             [0, 0, 0, 0]
         ]
     ],
@@ -203,7 +203,7 @@ blocks = { // 储存方块形状
     ]
 }
 
-block_types_matrx = ['T', 'L','J','S','Z','O','I']//用于随机生成
+block_types_matrx = ['T', 'L', 'J', 'S', 'Z', 'O', 'I']//用于随机生成
 
 
 
@@ -264,7 +264,12 @@ Block.prototype.fall = function () {
     this.setColor();
 }
 Block.prototype.fallFast = function () {
-
+    // 停止下落计时器，因为要马上落到底部
+    // console.log()
+    clearInterval(game.interval);
+    // 查看底部坐标，直接更改this.row和this.col
+    // 移动方块setColor()
+    // 开启下落定时器
 }
 
 
@@ -274,6 +279,7 @@ function Game() {
     this.score = 0;
     this.matrx = [] //存放计算矩阵
     this.init();
+    this.interval = 1;
 }
 Game.prototype.init = function () {
     // 这里是规则的核心，创建一个全零矩阵，与地图每个格子相对应，外围包上一圈1，0为空白，1为墙壁或者块
@@ -300,8 +306,8 @@ Game.prototype.init = function () {
     this.matrx.push(temp_bottom)
     this.matrx.push(temp_bottom)
 }
-Game.prototype.randomType = function(){
-    return block_types_matrx[parseInt(Math.random()*block_types_matrx.length)]
+Game.prototype.randomType = function () {
+    return block_types_matrx[parseInt(Math.random() * block_types_matrx.length)]
 }
 Game.prototype.safeCheck = function (block_row, block_col, block_direction) {
     //这里将三个位置属性利用变量的形式传进来，即保证了实时变化，有保证了不会改变原有方块位置属性的值
@@ -345,7 +351,7 @@ Game.prototype.update_matrx = function () {
         this.score += score_i.length;  // 更新得分
         block.speed /= 1.5;  // 更新速度
         console.log("分数为", this.score)
-        // this.update_score();//界面显示更改
+        $("#block span").text(this.score)
         this.score_update_matrx(score_i);
     }
 }
@@ -364,19 +370,33 @@ Game.prototype.score_update_matrx = function (score_i) {
         console.log(this.matrx)
         console.log("开始改造界面")
         // 改造界面应用了另一种方法，直接剔除那一行，再加一行空白就行了，比改造矩阵简单
-        $("#block tr").eq(i + score_i[score_i.length-1-i]).remove();//这里也是要从大行号开始剔除
-        console.log("第",score_i[i],"行已经剔除")
+        $("#block tr").eq(i + score_i[score_i.length - 1 - i]).remove();//这里也是要从大行号开始剔除
+        console.log("第", score_i[i], "行已经剔除")
 
         var $tr_append = $("<tr></tr>");
         for (var k = 0; k < block_map.col; k++) {
-            var $td_append = $("<td>1</td>");
+            var $td_append = $("<td></td>");
             $td_append.appendTo($tr_append);
         }
         $tr_append.prependTo($("#block table"));
     }
 }
-
-
+Game.prototype.timer = function () {
+    this.interval = setInterval(function () {//注意，这里有匿名函数function包裹，不能将this传递进去
+        if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
+            block.fall();
+        } else {
+            // console.log("到底了，新的来了")
+            game.update_matrx();
+            block = new Block(game.randomType())
+        }
+    }, block.speed)
+    console.log(this.score)
+}
+Game.prototype.removeTimer = function () {
+    console.log(this.interval,this.score)
+    clearInterval(this.interval);
+}
 
 
 var game = new Game()  // 实例化游戏规则，这里放前面是因为方块对象在涂颜色的时候要用到game对象中的matrx矩阵
@@ -390,7 +410,10 @@ var block = new Block(game.randomType());  // 实例化方块
 $(document).keydown(function (e) { // 按键绑定,注意是绑在document上
     // console.log(e.which)
     if (e.which > 36 && e.which < 41) {
-        e.preventDefault();//去掉默认事件
+        e.preventDefault();//去掉方向键默认事件
+    }
+    if (e.which == 32) {
+        e.preventDefault();//去掉空格键默认事件
     }
     switch (e.which) {
         case 38:
@@ -419,20 +442,13 @@ $(document).keydown(function (e) { // 按键绑定,注意是绑在document上
                 block.fall();
             }
             break;
+        case 32:  // 空格
+            if ((game.safeCheck(block.row + 1, block.col, block.direction))) {//如果向右安全的话就向右
+                block.fallFast();
+            }
+            break;
     }
 })
 
-
-var interval = setInterval(function () {
-    if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
-        block.fall();
-    } else {
-        // console.log("到底了，新的来了")
-        game.update_matrx();
-        block = new Block(game.randomType())
-    }
-}, block.speed)
-
-$("#block p").click(function () {
-    clearInterval(interval)
-})
+$("#block button").eq(1).click(game.timer)//绑定开始按钮
+$("#block button").eq(0).click(game.removeTimer)//绑定暂停按钮

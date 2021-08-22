@@ -3,40 +3,44 @@
 }
 #block{
     border: black solid 2px;
-    height: 500px;
 }
 
 #block table{
     width: 300px;
     height: 500px;
     border: solid 1px red;
-    margin: 20px auto;
+    margin: 25px 0px 0px 112px;
+    float: left;
 }
-
+#block .display{
+    float: left;
+    margin: 9px 0px 1px 100px
+}
 #block td{
     width: 25px;
     height: 25px;
-    border: saddlebrown solid 1px;
+    border-radius: 5px;
+    /* border: saddlebrown solid 1px; */
 }
 
 #block .T{
-    background-color: red;
+    background-image: url(../images/block_img/1.png);
 }
 #block .L{
-    background-color: blue;
+    background-image: url(../images/block_img/2.png);
 }
 #block .J{
-    background-color: yellow;
+    background-image: url(../images/block_img/3.png);
 }
 #block .O{
-    background-color: chocolate;
+    background-image: url(../images/block_img/4.png);
 }
 #block .Z{
-    background-color: orange;
+    background-image: url(../images/block_img/5.png);
 }
 #block .S{
-    background-color: green;
+    background-image: url(../images/block_img/6.png);
 }
 #block .I{
-    background-color: pink;
+    background-image: url(../images/block_img/7.png);
 }
