@@ -265,11 +265,17 @@ Block.prototype.fall = function () {
 }
 Block.prototype.fallFast = function () {
     // 停止下落计时器，因为要马上落到底部
-    // console.log()
     clearInterval(game.interval);
-    // 查看底部坐标，直接更改this.row和this.col
-    // 移动方块setColor()
-    // 开启下落定时器
+    // 开启一个特别快的定时器
+    var fast_interval = setInterval(function() {
+        if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
+            block.fall();
+        }else{//到底部了就停掉这个定时器
+            clearInterval(fast_interval)
+        }
+    }, 0);
+    // 开启正常下落定时器
+    game.timer();
 }
 
 
@@ -286,7 +292,6 @@ Game.prototype.init = function () {
     // 块矩阵在内部运动，相应的位置相加，相加后小于2（0或1），则可以运动，等于2，则表示撞墙或者撞块
     // 这样一个循环就能看出这个块对象能不能移动、转动和下落
     // 每下落一个块就更新以下该矩阵，再加一个循环可判断出是否应该消行，消行就直接在矩阵上改正，一行1改为一行0
-
     for (var j = 0; j < block_map.row; j++) {
         var temp_row = []
         temp_row.push(1);// 围墙左边
@@ -382,7 +387,7 @@ Game.prototype.score_update_matrx = function (score_i) {
     }
 }
 Game.prototype.timer = function () {
-    this.interval = setInterval(function () {//注意，这里有匿名函数function包裹，不能将this传递进去
+    game.interval = setInterval(function () {//这里只能用game.interval,不能用this.interval真是费解
         if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
             block.fall();
         } else {
@@ -391,11 +396,10 @@ Game.prototype.timer = function () {
             block = new Block(game.randomType())
         }
     }, block.speed)
-    console.log(this.score)
 }
 Game.prototype.removeTimer = function () {
-    console.log(this.interval,this.score)
-    clearInterval(this.interval);
+    // console.log(game.interval,game.score)
+    clearInterval(game.interval);
 }
 
 
