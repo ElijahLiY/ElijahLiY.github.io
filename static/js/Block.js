@@ -11,7 +11,7 @@ BlockMap.prototype.init = function () {
             var $td = $("<td></td>");
             $td.appendTo($tr);
         }
-        $tr.appendTo($("#block table"));
+        $tr.appendTo($("#block").children("table"));// 因为display中也有table，这里得精确一点，如果用$("#block table")就都渲染了
     }
 }
 var block_map = new BlockMap;  // 实例化地图
@@ -207,16 +207,17 @@ block_types_matrx = ['T', 'L', 'J', 'S', 'Z', 'O', 'I']//用于随机生成
 
 
 
-function Block(block_type) {
-    this.block_type = block_type;// 传入类型
-    this.next_type = game.randomType()
+function Block(block_type, direction) {
+    this.block_type = block_type; //  传入类型
+    this.direction = direction; //  传入方向
+    this.next_type = game.random_type;
+    this.next_direction = parseInt(Math.random() * 4)//每个块都有四个方向，初始化中随机选择一个方向
     this.speed = 400;
     this.init();
 }
 Block.prototype.init = function () {
     this.row = 0;
     this.col = 4;//初始显示时应该为居中显示
-    this.direction = parseInt(Math.random() * 4);//每个块都有四个方向，初始化中随机选择一个方向
     this.setColor();
 }
 
@@ -267,11 +268,11 @@ Block.prototype.fall = function () {
 Block.prototype.fallFast = function () {
     // 停止下落计时器，因为要马上落到底部
     clearInterval(game.interval);
-    // 开启一个特别快的定时器
-    var fast_interval = setInterval(function() {
+    // 开启一个特别快的定时器，尽力而为
+    var fast_interval = setInterval(function () {
         if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
             block.fall();
-        }else{//到底部了就停掉这个定时器
+        } else {//到底部了就停掉这个定时器
             clearInterval(fast_interval)
         }
     }, 0);
@@ -311,6 +312,10 @@ Game.prototype.init = function () {
     this.matrx.push(temp_bottom)// 围墙底部(2层，防止计算出错)
     this.matrx.push(temp_bottom)
     this.matrx.push(temp_bottom)
+
+    this.random_type = this.randomType();
+    block = new Block(this.random_type, 0);  // 实例化方块，第一次方向直接为0就行了（因为没有写随机化的函数），后面会通过随机化语句实现
+    this.displayNextBlock();//显示下一个
 }
 Game.prototype.randomType = function () {
     return block_types_matrx[parseInt(Math.random() * block_types_matrx.length)]
@@ -384,19 +389,19 @@ Game.prototype.score_update_matrx = function (score_i) {
             var $td_append = $("<td></td>");
             $td_append.appendTo($tr_append);
         }
-        $tr_append.prependTo($("#block table"));
+        $tr_append.prependTo($("#block").children("table"));// 因为display中也有table，这里得精确一点，如果用$("#block table")就都渲染了
     }
 }
 Game.prototype.timer = function () {
+    clearInterval(game.interval);//防止多次按下开启多个定时器
     game.interval = setInterval(function () {//这里只能用game.interval,不能用this.interval真是费解
         if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
             block.fall();
         } else {
             // console.log("到底了，新的来了")
-            game.update_matrx();
-            block = new Block(block.next_type);
-            block.next_type = game.randomType();//取得下一个类型
-            $("#block .next_block p").text(block.next_type);//显示下一个
+            game.update_matrx();//更新矩阵
+            block = new Block(block.next_type, block.next_direction);//重新创建方块对象
+            game.displayNextBlock();//产生展示下一个方块
         }
     }, block.speed)
 }
@@ -404,14 +409,25 @@ Game.prototype.removeTimer = function () {
     // console.log(game.interval,game.score)
     clearInterval(game.interval);
 }
+Game.prototype.displayNextBlock = function () {
+    block.next_type = this.randomType();//取得下一个类型
+    block.next_direction = parseInt(Math.random() * 4);// 取得下一个形状
+    // 渲染形状
+    for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 4; j++) {
+            var pix = $("#block .next_block tr").eq(i).children("td").eq(j);
+            if (blocks[block.next_type][block.next_direction][i][j] == 1) {
+                pix.removeClass();//形状之内的，先清除原有的，这里的处理有别于主界面
+                pix.addClass(block.next_type)//加上样式，这里让样式和block_type同名，非常好用
+            } else {
+                pix.removeClass();//形状之外的当然也要清除
+            }
+        }
+    }
+}
 
-
-var game = new Game()  // 实例化游戏规则，这里放前面是因为方块对象在涂颜色的时候要用到game对象中的matrx矩阵
-
-var block = new Block(game.randomType());  // 实例化方块
-
-
-
+var block = null; // 用于存放对象
+var game = new Game()  // 实例化游戏规则，游戏初始化
 
 
 $(document).keydown(function (e) { // 按键绑定,注意是绑在document上

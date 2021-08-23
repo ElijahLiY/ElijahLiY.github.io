@@ -44,3 +44,12 @@
 #block .I{
     background-image: url(../images/block_img/7.png);
 }
+
+#block .next_block table {
+    /* 这里图像也用table渲染跟主界面一样，这个table是4*4的，所以样用新样式覆盖之前的table */
+    /* 但是td与主界面td是一样的，不用新写样式 */
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border: none;
+}
