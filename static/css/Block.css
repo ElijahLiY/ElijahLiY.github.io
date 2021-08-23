@@ -2,7 +2,7 @@
     border-collapse: collapse;
 }
 #block{
-    border: black solid 2px;
+    /* border: black solid 2px; */
 }
 
 #block table{

@@ -382,8 +382,7 @@ Game.prototype.score_update_matrx = function (score_i) {
         console.log("开始改造界面")
         // 改造界面应用了另一种方法，直接剔除那一行，再加一行空白就行了，比改造矩阵简单
         $("#block tr").eq(i + score_i[score_i.length - 1 - i]).remove();//这里也是要从大行号开始剔除
-        console.log("第", score_i[i], "行已经剔除")
-
+        // console.log("第", score_i[i], "行已经剔除")
         var $tr_append = $("<tr></tr>");
         for (var k = 0; k < block_map.col; k++) {
             var $td_append = $("<td></td>");
@@ -423,6 +422,18 @@ Game.prototype.displayNextBlock = function () {
                 pix.removeClass();//形状之外的当然也要清除
             }
         }
+    }
+}
+Game.prototype.restartGame = function(){
+    // 重新实例化Game
+    game = new Game();//用一样的名字代替原来的对象，block也会在game.init()中被重置
+    // 停止计时器
+    clearInterval(game.interval);
+    // 重置界面
+    for (var i = 0; i < block_map.row; i++) {
+        for (var j = 0; j < block_map.col; j++) {
+            $("#block tr").eq(i).children("td").eq(j).removeClass();
+        }        
     }
 }
 
@@ -473,5 +484,6 @@ $(document).keydown(function (e) { // 按键绑定,注意是绑在document上
     }
 })
 
-$("#block button").eq(1).click(game.timer)//绑定开始按钮
 $("#block button").eq(0).click(game.removeTimer)//绑定暂停按钮
+$("#block button").eq(1).click(game.timer)//绑定开始按钮
+$("#block button").eq(2).click(game.restartGame)//绑定暂停按钮
