@@ -212,7 +212,7 @@ function Block(block_type, direction) {
     this.direction = direction; //  传入方向
     this.next_type = game.random_type;
     this.next_direction = parseInt(Math.random() * 4)//每个块都有四个方向，初始化中随机选择一个方向
-    this.speed = 400;
+    this.speed = 700;
     this.init();
 }
 Block.prototype.init = function () {
