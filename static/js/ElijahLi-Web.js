@@ -19,14 +19,14 @@ $(function () {// 绑定菜单标题标签切换功能
 })
 
 $(function () {// 默认显示
-	$(".games_tit").addClass('selected')//主界面标题默认选中效果
-	$(".games").css("display", "block").siblings().css("display", "none");//主界面显示nav
+	$(".nav_tit").addClass('selected')//主界面标题默认选中效果
+	$(".nav").css("display", "block").siblings().css("display", "none");//主界面显示nav
 
 	$(".tools_tits_li:first-child").addClass('selected');
 	$(".translate").css("display", "block").siblings().css("display", "none");// 工具界面显示trans
 
-	$(".block_tit").addClass('selected');
-	$(".block").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
+	$(".greedy_snake_tit").addClass('selected');
+	$(".greedySnake").css("display", "block").siblings().css("display", "none");// 游戏界面显示greedysnake
 })
 
 // 将网站导航图标绑在div上
