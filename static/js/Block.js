@@ -272,6 +272,8 @@ Block.prototype.fallFast = function () {
     var fast_interval = setInterval(function () {
         if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
             block.fall();
+            game.count += 1;
+            // console.log(game.count)
         } else {//到底部了就停掉这个定时器
             clearInterval(fast_interval)
         }
@@ -286,8 +288,9 @@ Block.prototype.fallFast = function () {
 function Game() {
     this.score = 0;
     this.matrx = [] //存放计算矩阵
-    this.init();
+    this.count = 0;//用于判断游戏是否结束
     this.interval = 1;
+    this.init();
 }
 Game.prototype.init = function () {
     // 这里是规则的核心，创建一个全零矩阵，与地图每个格子相对应，外围包上一圈1，0为空白，1为墙壁或者块
@@ -379,7 +382,7 @@ Game.prototype.score_update_matrx = function (score_i) {
             this.matrx[score_i[i] - j] = this.matrx[score_i[i] - j - 1]//改造矩阵
         }
         console.log(this.matrx)
-        console.log("开始改造界面")
+        // console.log("开始改造界面")
         // 改造界面应用了另一种方法，直接剔除那一行，再加一行空白就行了，比改造矩阵简单
         $("#block tr").eq(i + score_i[score_i.length - 1 - i]).remove();//这里也是要从大行号开始剔除
         // console.log("第", score_i[i], "行已经剔除")
@@ -396,8 +399,13 @@ Game.prototype.timer = function () {
     game.interval = setInterval(function () {//这里只能用game.interval,不能用this.interval真是费解
         if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
             block.fall();
+            game.count += 1;// 记录下降次数，便于检查是否游戏结束
+            // console.log(game.count)
         } else {
-            // console.log("到底了，新的来了")
+            if (game.count == 0) {//说明一步未走就不能下降了，那么直接结束游戏，存在关于快速下降的问题，因为快速下降的话count没有计数
+                game.gameOver();
+            }
+            game.count = 0; //更新该属性
             game.update_matrx();//更新矩阵
             block = new Block(block.next_type, block.next_direction);//重新创建方块对象
             game.displayNextBlock();//产生展示下一个方块
@@ -424,18 +432,26 @@ Game.prototype.displayNextBlock = function () {
         }
     }
 }
-Game.prototype.restartGame = function(){
-    // 重新实例化Game
-    game = new Game();//用一样的名字代替原来的对象，block也会在game.init()中被重置
+Game.prototype.restartGame = function () {
     // 停止计时器
     clearInterval(game.interval);
+
+    // 重新实例化Game
+    game = new Game();//用一样的名字代替原来的对象，block也会在game.init()中被重置
+
     // 重置界面
     for (var i = 0; i < block_map.row; i++) {
         for (var j = 0; j < block_map.col; j++) {
             $("#block tr").eq(i).children("td").eq(j).removeClass();
-        }        
+        }
     }
 }
+Game.prototype.gameOver = function () {
+    // 停止计时器
+    clearInterval(game.interval);
+    alert("Game Over!");
+}
+
 
 var block = null; // 用于存放对象
 var game = new Game()  // 实例化游戏规则，游戏初始化
