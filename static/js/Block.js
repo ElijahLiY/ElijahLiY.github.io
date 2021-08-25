@@ -206,13 +206,11 @@ blocks = { // 储存方块形状
 block_types_matrx = ['T', 'L', 'J', 'S', 'Z', 'O', 'I']//用于随机生成
 
 
-
 function Block(block_type, direction) {
     this.block_type = block_type; //  传入类型
     this.direction = direction; //  传入方向
     this.next_type = game.random_type;
     this.next_direction = parseInt(Math.random() * 4)//每个块都有四个方向，初始化中随机选择一个方向
-    this.speed = 700;
     this.init();
 }
 Block.prototype.init = function () {
@@ -290,6 +288,7 @@ function Game() {
     this.matrx = [] //存放计算矩阵
     this.count = 0;//用于判断游戏是否结束
     this.interval = 1;
+    this.speed = 700;
     this.init();
 }
 Game.prototype.init = function () {
@@ -347,7 +346,7 @@ Game.prototype.update_matrx = function () {
 
     // 判断是否得分
     var score_i = [];//记录得分的行
-    for (var i = 0; i < block_map.row; i++) {
+    for (var i = 0; i < block_map.row; i++) {//判断是否得分
         var sum = 0;
         for (var j = 0; j < block_map.col; j++) {
             sum += this.matrx[i][j + 1];
@@ -363,9 +362,10 @@ Game.prototype.update_matrx = function () {
     // 如果得分，更改矩阵，更新颜色
     if (score_i.length != 0) {//表示得分
         this.score += score_i.length;  // 更新得分
-        block.speed /= 1.5;  // 更新速度
-        console.log("分数为", this.score)
-        $("#block span").text(this.score)
+        this.speed /= 1.05;  // 更新速度
+        console.log(this.speed)
+        console.log("分数为", this.score);
+        $("#block span").text(this.score);
         this.score_update_matrx(score_i);
     }
 }
@@ -374,13 +374,17 @@ Game.prototype.score_update_matrx = function (score_i) {
     for (var i = 0; i < score_i.length; i++) {//如果为多行得分，score_i中记录的行号是从小到大的
         //对于每一个得分
         // console.log("开始改造矩阵")
-        for (var j = 0; j < score_i[i]; j++) {//score_i[i]即使其中记录的某一行的行号，是从0开始计数的
-            //对于自身及以上的行，只需要将上一行数值赋给下一行，把上一行颜色赋给下一行
-            //第0行不用赋，而且要从第i行还是赋值，否则就乱了
-            //比如score_i[i]=18，也即是第18行消失，首先要让17行代替18行
-            // console.log(this.matrx[score_i[i] - j],this.matrx[score_i[i] - j - 1])
-            this.matrx[score_i[i] - j] = this.matrx[score_i[i] - j - 1]//改造矩阵
-        }
+        // for (var j = 0; j < score_i[i]; j++) {//score_i[i]即使其中记录的某一行的行号，是从0开始计数的
+        //     //对于自身及以上的行，只需要将上一行数值赋给下一行，把上一行颜色赋给下一行
+        //     //第0行不用赋，而且要从第i行还是赋值，否则就乱了
+        //     //比如score_i[i]=18，也即是第18行消失，首先要让17行代替18行
+        //     // console.log(this.matrx[score_i[i] - j],this.matrx[score_i[i] - j - 1])
+        //     this.matrx[score_i[i] - j] = this.matrx[score_i[i] - j - 1]//改造矩阵
+        // }
+        this.matrx.splice(score_i[i], 1);//从第score_i[i]行删除，删除1个元素
+        var new_arry = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+        this.matrx.splice(0, 0,new_arry);//在第0行删除元素0个，将new_array插进去
+
         console.log(this.matrx)
         // console.log("开始改造界面")
         // 改造界面应用了另一种方法，直接剔除那一行，再加一行空白就行了，比改造矩阵简单
@@ -410,7 +414,7 @@ Game.prototype.timer = function () {
             block = new Block(block.next_type, block.next_direction);//重新创建方块对象
             game.displayNextBlock();//产生展示下一个方块
         }
-    }, block.speed)
+    }, game.speed)
 }
 Game.prototype.removeTimer = function () {
     // console.log(game.interval,game.score)
