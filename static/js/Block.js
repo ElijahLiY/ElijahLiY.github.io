@@ -362,7 +362,7 @@ Game.prototype.update_matrx = function () {
     // 如果得分，更改矩阵，更新颜色
     if (score_i.length != 0) {//表示得分
         this.score += score_i.length;  // 更新得分
-        this.speed /= 1.029;  // 更新速度
+        this.speed /= 1.02;  // 更新速度
         console.log(this.speed)
         console.log("分数为", this.score);
         $("#block span").text(this.score);
