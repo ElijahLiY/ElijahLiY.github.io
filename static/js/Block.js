@@ -14,7 +14,7 @@ BlockMap.prototype.init = function () {
         $tr.appendTo($("#block").children("table"));// 因为display中也有table，这里得精确一点，如果用$("#block table")就都渲染了
     }
 }
-var block_map = new BlockMap;  // 实例化地图
+var block_map = new BlockMap();  // 实例化地图
 
 
 
@@ -281,8 +281,6 @@ Block.prototype.fallFast = function () {
 }
 
 
-
-
 function Game() {
     this.score = 0;
     this.matrx = [] //存放计算矩阵
@@ -383,7 +381,7 @@ Game.prototype.score_update_matrx = function (score_i) {
         // }
         this.matrx.splice(score_i[i], 1);//从第score_i[i]行删除，删除1个元素
         var new_arry = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
-        this.matrx.splice(0, 0,new_arry);//在第0行删除元素0个，将new_array插进去
+        this.matrx.splice(0, 0, new_arry);//在第0行删除元素0个，将new_array插进去
 
         console.log(this.matrx)
         // console.log("开始改造界面")
@@ -456,54 +454,59 @@ Game.prototype.gameOver = function () {
     alert("Game Over!");
 }
 
+$(".block_tit").click(function () {
+    var block = null; // 用于存放对象
+    var game = new Game()  // 实例化游戏规则，游戏初始化
 
-var block = null; // 用于存放对象
-var game = new Game()  // 实例化游戏规则，游戏初始化
-
-
-$(document).keydown(function (e) { // 按键绑定,注意是绑在document上
-    // console.log(e.which)
-    if (e.which > 36 && e.which < 41) {
-        e.preventDefault();//去掉方向键默认事件
-    }
-    if (e.which == 32) {
-        e.preventDefault();//去掉空格键默认事件
-    }
-    switch (e.which) {
-        case 38:
-            if (block.direction < 3) {
-                if (game.safeCheck(block.row, block.col, block.direction + 1)) {//如果转向还safe就转
-                    block.rotate();
+    $(document).keydown(function (e) { // 按键绑定,注意是绑在document上
+        // console.log(e.which)
+        if (e.which > 36 && e.which < 41) {
+            e.preventDefault();//去掉方向键默认事件
+        }
+        if (e.which == 32) {
+            e.preventDefault();//去掉空格键默认事件
+        }
+        switch (e.which) {
+            case 38:
+                if (block.direction < 3) {
+                    if (game.safeCheck(block.row, block.col, block.direction + 1)) {//如果转向还safe就转
+                        block.rotate();
+                    }
+                } else {
+                    if (game.safeCheck(block.row, block.col, 0)) {//以为方向只有四个方向，3不能再加了
+                        block.rotate();
+                    }
                 }
-            } else {
-                if (game.safeCheck(block.row, block.col, 0)) {//以为方向只有四个方向，3不能再加了
-                    block.rotate();
+                break;
+            case 37:
+                if (game.safeCheck(block.row, block.col - 1, block.direction)) {//如果向左安全的话就向左
+                    block.moveLeft();
                 }
-            }
-            break;
-        case 37:
-            if (game.safeCheck(block.row, block.col - 1, block.direction)) {//如果向左安全的话就向左
-                block.moveLeft();
-            }
-            break;
-        case 39:
-            if ((game.safeCheck(block.row, block.col + 1, block.direction))) {//如果向右安全的话就向右
-                block.moveRight();
-            }
-            break;
-        case 40:
-            if ((game.safeCheck(block.row + 1, block.col, block.direction))) {//如果向右安全的话就向右
-                block.fall();
-            }
-            break;
-        case 32:  // 空格
-            if ((game.safeCheck(block.row + 1, block.col, block.direction))) {//如果向右安全的话就向右
-                block.fallFast();
-            }
-            break;
-    }
+                break;
+            case 39:
+                if ((game.safeCheck(block.row, block.col + 1, block.direction))) {//如果向右安全的话就向右
+                    block.moveRight();
+                }
+                break;
+            case 40:
+                if ((game.safeCheck(block.row + 1, block.col, block.direction))) {//如果向右安全的话就向右
+                    block.fall();
+                }
+                break;
+            case 32:  // 空格
+                if ((game.safeCheck(block.row + 1, block.col, block.direction))) {//如果向右安全的话就向右
+                    block.fallFast();
+                }
+                break;
+        }
+    })
+
+    $("#block button").eq(0).click(game.removeTimer)//绑定暂停按钮
+    $("#block button").eq(1).click(game.timer)//绑定开始按钮
+    $("#block button").eq(2).click(game.restartGame)//绑定暂停按钮
+
 })
 
-$("#block button").eq(0).click(game.removeTimer)//绑定暂停按钮
-$("#block button").eq(1).click(game.timer)//绑定开始按钮
-$("#block button").eq(2).click(game.restartGame)//绑定暂停按钮
+
+
+
