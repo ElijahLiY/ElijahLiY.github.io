@@ -1,0 +1,24 @@
+/* 去除掉默认的不好看样式 */
+a {
+	text-decoration-line: none;/*去掉下划线*/
+	color: #3f514d;/*改变颜色*/
+}
+a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
+	border: none;
+}
+ul li {
+	text-decoration: none;
+	list-style-type: none;/*去掉小圆点*/
+}
+input{
+    border: none;/*冲掉以前复杂的东西*/
+}
+
+
+/* 设置网页通用 */
+.clear{clear: both;}
+.clear_fix::after{
+	content: ' ';
+	clear: both;
+	display: block;
+}
