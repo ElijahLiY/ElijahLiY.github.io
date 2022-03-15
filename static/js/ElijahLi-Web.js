@@ -53,7 +53,7 @@ var prg_web_link = [
 	['github', 'static/images/web_icos/github.jpg', 'https://github.com/'],
 	['html5', 'static/images/web_icos/html5.jpg', 'https://www.xuanfengge.com/funny/html5/element/'],
 	['jquery', 'static/images/web_icos/jquery.jpg', 'https://www.jquery123.com/'],
-	['pythonanywhere', 'static/images/web_icos/pythonanywhere.jpg', 'https://www.pythonanywhere.com/'],
+	['pythonanywhere', 'static/images/web_icos/pythonanywhere.jpg', 'https://www.pythonanywhere.com/user/ElijahLi/'],
 	['青云', 'static/images/web_icos/青云.jpg', 'https://www.qingcloud.com/'],
 	['npm', 'static/images/web_icos/npm.jpg', 'https://www.npmjs.cn/'],
 	['空白', 'static/images/web_icos/空白.jpg', ''],
@@ -71,7 +71,8 @@ var shopping_web_link = [
 	['空白', 'static/images/web_icos/空白.jpg', ''],
 ]
 
-$(function () {// 添加相应的网址栏
+
+$(function () { // 添加相应的网址栏
 	add_websites('通用', common_web_link);
 	add_websites('编程', prg_web_link);
 	add_websites('资源', src_web_link);
@@ -91,12 +92,12 @@ function add_websites(name, web_link) {
 	$white_line.appendTo($web_list);
 
 	// 导航框框盒子
-	$web_icons = $('<div></div>');//构建大盒子
+	$web_icons = $('<div></div>'); //构建大盒子
 	$web_icons.addClass('web_icons');
 	for (i = 0; i < web_link.length; i++) {
-		var $web_icon = $('<a></a>');//创建一个小盒
-		$web_icon.addClass('web_icon');//小盒应该有的样式（与内容无关）
-		$web_icon.css("backgroundImage", 'url(' + web_link[i][1] + ')').attr({//小盒子的内容
+		var $web_icon = $('<a></a>'); //创建一个小盒
+		$web_icon.addClass('web_icon'); //小盒应该有的样式（与内容无关）
+		$web_icon.css("backgroundImage", 'url(' + web_link[i][1] + ')').attr({ //小盒子的内容
 			"href": web_link[i][2],
 			"target": "_blank"
 		})
@@ -142,4 +143,36 @@ $(function showTime() {
 
 	$(".date").text(year + "年" + month + "月" + date + "日" + "\n" + hour + ":" + minute + ":" + second);
 	setTimeout(showTime, 1000);
+})
+
+// 调用百度翻译接口
+$(function () {
+	const appid = '20211023000980498'
+	const secretKey = 'qOkqwNRPiUHWmdAwDT8w'
+	const myurl = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
+	
+	$('.trans_btn').click(function () {
+		// 随机数验证安全
+		var salt = Math.round(Math.random(0, 1) * 10000)
+		// 取得输入内容q
+		var q = 'love'
+		var sign = md5(appid + q + String(salt) + secretKey)
+
+		$.ajax({
+			url:myurl,
+			type:'get',
+			dataType:'json',
+			data:{
+				appid:appid,
+				q:q,
+				from:'en',
+				to:'zh',
+				salt:salt,
+				sign:sign
+			},
+			success: function(data){
+				console.log(data)
+			}
+		})
+	})
 })
