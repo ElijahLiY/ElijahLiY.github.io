@@ -48,6 +48,8 @@ var common_web_link = [
 	['添加', 'static/images/web_icos/添加.jpg', ''],
 ]
 var prg_web_link = [
+	['微信开发文档', 'https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png', 'https://developers.weixin.qq.com/minigame/dev/guide/'],
+	['微信云托管', 'https://cloud.weixin.qq.com/favicon.svg', 'https://cloud.weixin.qq.com/cloudrun/service'],
 	['python官网', 'static/images/web_icos/python官网.jpg', 'http://python.com'],
 	['CSDN', 'static/images/web_icos/CSDN.jpg', 'https://www.csdn.net/'],
 	['github', 'static/images/web_icos/github.jpg', 'https://github.com/'],
@@ -147,6 +149,10 @@ $(function showTime() {
 
 // 调用百度翻译接口
 $(function () {
+	/**
+	*直接调用百度翻译接口，返回服务器错误，has been blocked by CORS policy:
+	*No 'Access-Control-Allow-Origin' header is present on the requested resource.
+	 */
 	const appid = '20211023000980498'
 	const secretKey = 'qOkqwNRPiUHWmdAwDT8w'
 	const myurl = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
@@ -157,6 +163,7 @@ $(function () {
 		// 取得输入内容q
 		var q = 'love'
 		var sign = md5(appid + q + String(salt) + secretKey)
+		console.log('ok')
 
 		$.ajax({
 			url:myurl,
@@ -172,6 +179,21 @@ $(function () {
 			},
 			success: function(data){
 				console.log(data)
+			}
+		})
+	})
+})
+// 通过本地服务器调用百度翻译接口
+$(function () {
+	const myurl = 'http://127.0.0.1:5000'
+	$('.trans_btn').click(function () {
+		var q = 'love'
+		$.ajax({
+			url:myurl,
+			type:'POST',
+			data:q,
+			success: function(res){
+				console.log(res)
 			}
 		})
 	})

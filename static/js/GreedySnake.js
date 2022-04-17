@@ -95,7 +95,6 @@ Snake.prototype.init=function(){
 	//给蛇添加一条属性，用来表示蛇走的方向
 	this.direction=this.directionNum.right;	//默认让蛇往右走
 };
-
 //这个方法用来获取蛇头的下一个位置对应的元素，要根据元素做不同的事情
 Snake.prototype.getNextPos=function(){
 	var nextPos=[	//蛇头要走的下一个点的坐标

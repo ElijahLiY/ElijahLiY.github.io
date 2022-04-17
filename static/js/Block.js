@@ -398,7 +398,7 @@ Game.prototype.score_update_matrx = function (score_i) {
 }
 Game.prototype.timer = function () {
     clearInterval(game.interval);//防止多次按下开启多个定时器
-    game.interval = setInterval(function () {//这里只能用game.interval,不能用this.interval真是费解
+    game.interval = setInterval(function () {//这里只能用game.interval,不能用this.interval真是费解。@@@20220328注：setInterval的this指向window，内部写成箭头函数就指向game了
         if (game.safeCheck(block.row + 1, block.col, block.direction)) {//如果下降安全的话就下降
             block.fall();
             game.count += 1;// 记录下降次数，便于检查是否游戏结束
