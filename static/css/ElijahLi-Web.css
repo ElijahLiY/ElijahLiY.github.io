@@ -10,7 +10,7 @@ body {
 	margin: 0;/*用户代理中margin为8*/
 	padding: 0;
 	color: #000;
-	min-width: 1000px;	
+	/* min-width: 1000px;	 */
 }
 /*蒙版*/
 .mask{
@@ -83,7 +83,7 @@ header .menu ul .selected{
 
 .content{
 	margin: auto;
-	width: 900px;
+	/* width: 900px; */
 	min-height: 700px;
 }
 
@@ -139,7 +139,7 @@ header .menu ul .selected{
 
 /* 导航部分 */
 .websites{
-	width: 810px;
+	/* width: 810px; */
 	height: 800px;
 	margin: 5px auto 0 auto;
 	/* background-color: beige; */
