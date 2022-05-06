@@ -32,7 +32,7 @@ $(function () { // 默认显示
 // 将网站导航图标绑在div上
 var common_web_link = [
 	['网易公开课', 'static/images/web_icos/网易公开课.jpg', 'https://open.163.com/'],
-	['百度', 'static/images/web_icos/百度.jpg', 'http://www.baidu.com'],
+	['百度', 'http://www.baidu.com/favicon.ico', 'http://www.baidu.com'],
 	['bilibili', 'static/images/web_icos/bilibili.jpg', 'https://www.bilibili.com/'],
 	['知乎', 'static/images/web_icos/知乎.jpg', 'https://www.zhihu.com/'],
 	['', 'static/images/web_icos/腾讯课堂.jpg', 'https://ke.qq.com/'],
@@ -50,6 +50,7 @@ var common_web_link = [
 var prg_web_link = [
 	['微信开发文档', 'https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png', 'https://developers.weixin.qq.com/minigame/dev/guide/'],
 	['微信云托管', 'https://cloud.weixin.qq.com/favicon.svg', 'https://cloud.weixin.qq.com/cloudrun/service'],
+	['ECharts', 'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/zh/images/favicon.png', 'https://echarts.apache.org/zh/index.html'],
 	['python官网', 'static/images/web_icos/python官网.jpg', 'http://python.com'],
 	['CSDN', 'static/images/web_icos/CSDN.jpg', 'https://www.csdn.net/'],
 	['github', 'static/images/web_icos/github.jpg', 'https://github.com/'],
