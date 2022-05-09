@@ -1,0 +1,7 @@
+.box1 {
+  display: flex;
+}
+.box1 .box2 {
+  color: #000;
+  background-color: #333;
+}
